@@ -1,0 +1,498 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>FastDCS-架构介绍 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="FastDCS 开发实例.html" />
+    
+    
+    <link rel="prev" href="FastDCS-introduction.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Zeppelin
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../zeppelin/zeppelin Note 运行方式.html">
+            
+                <a href="../zeppelin/zeppelin Note 运行方式.html">
+            
+                    
+                    zeppelin Note 运行方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../zeppelin/zeppelin Note 执行过程.html">
+            
+                <a href="../zeppelin/zeppelin Note 执行过程.html">
+            
+                    
+                    zeppelin Note 执行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../zeppelin/zeppelin 中运行 spark streaming kakfa 实时可视化.html">
+            
+                <a href="../zeppelin/zeppelin 中运行 spark streaming kakfa 实时可视化.html">
+            
+                    
+                    zeppelin 中运行 spark streaming kakfa 实时可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Atlas/Apache Atlas 数据治理.html">
+            
+                <a href="../Atlas/Apache Atlas 数据治理.html">
+            
+                    
+                    Apache-Atlas-数据治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="FastDCS-introduction.html">
+            
+                <a href="FastDCS-introduction.html">
+            
+                    
+                    FastDCS-分布式计算系统介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.4.1" data-path="FastDCS 架构介绍.html">
+            
+                <a href="FastDCS 架构介绍.html">
+            
+                    
+                    FastDCS-架构介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="FastDCS 开发实例.html">
+            
+                <a href="FastDCS 开发实例.html">
+            
+                    
+                    FastDCS-开发实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="FastDCS 开发说明.html">
+            
+                <a href="FastDCS 开发说明.html">
+            
+                    
+                    FastDCS 开发说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >FastDCS-架构介绍</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="fastdcs-&#x67B6;&#x6784;&#x4ECB;&#x7ECD;">FastDCS &#x67B6;&#x6784;&#x4ECB;&#x7ECD;</h2>
+<p>FastDCS&#x662F;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;C++&#x5F00;&#x53D1;&#x7684;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x8BA1;&#x7B97;&#x7CFB;&#x7EDF;&#xFF0C;&#x4F7F;&#x7528;&#x5B83;&#x53EF;&#x4EE5;&#x89E3;&#x51B3;&#x6D77;&#x91CF;&#x6570;&#x636E;&#x7684;&#x5B9E;&#x65F6;&#x8BA1;&#x7B97;&#x548C;&#x9700;&#x8981;&#x5206;&#x5E03;&#x5F0F;&#x670D;&#x52A1;&#x65B9;&#x9762;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<h2 id="11-&#x80CC;&#x666F;&#x7B80;&#x4ECB;">1.1 &#x80CC;&#x666F;&#x7B80;&#x4ECB;</h2>
+<p>FastDCS&#x6700;&#x521D;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3; <a href="http://liuxun.org/ieread.com/" target="_blank">&#x745E;&#x8BFB;&#x7F51;</a> &#x7684;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x8F6C;&#x6362;&#x5DE5;&#x4F5C;&#x800C;&#x5F00;&#x53D1;&#x7684;&#xFF0C;&#x745E;&#x8BFB;&#x7F51;&#x662F;&#x4E00;&#x5BB6;&#x63D0;&#x4F9B;&#x6570;&#x5B57;&#x9605;&#x8BFB;&#x7684;&#x670D;&#x52A1;&#x63D0;&#x4F9B;&#x5546;&#xFF0C;&#x6BCF;&#x5929;&#x7EA6;&#x6709;10&#x4E07;&#x4EFD;Office&#x6587;&#x6863;&#x548C;&#x4E0A;&#x5343;&#x4EFD;&#x671F;&#x520A;&#x6742;&#x5FD7;&#x6392;&#x7248;&#x6587;&#x4EF6;&#x9700;&#x8981;&#x8F6C;&#x6362;&#x6210;PDF&#x3001;JPG&#x3001;FLASH&#x3001;HTML&#x3001;Txt&#x548C;ePub&#x7B49;&#x6587;&#x4EF6;&#x683C;&#x5F0F;&#xFF0C;&#x745E;&#x8BFB;&#x7F51;&#x5C06;FastDCS&#x90E8;&#x7F72;&#x5728;4&#x53F0;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x4ECE;2008&#x5E74;&#x81F3;2012&#x5E74;&#x7D2F;&#x8BA1;&#x63D0;&#x4F9B;&#x8F6C;&#x6362;&#x670D;&#x52A1;7&#x5343;&#x4E07;&#x6B21;&#xFF0C;&#x751F;&#x6210;&#x5404;&#x5F0F;&#x6587;&#x4EF6;&#x6570;40&#x4EBF;&#xFF0C;&#x603B;&#x91CF;300TB&#x7684;&#x6570;&#x636E;&#xFF1B;</p>
+<p>2013&#x5E74;FastDCS&#x8FDB;&#x884C;&#x4E86;&#x4EE3;&#x7801;&#x91CD;&#x6784;&#xFF0C;&#x5927;&#x5E45;&#x5EA6;&#x63D0;&#x5347;&#x4E86;&#x7CFB;&#x7EDF;&#x7684;&#x6027;&#x80FD;&#x548C;&#x53EF;&#x9760;&#x6027;&#xFF0C;&#x5E76;&#x5C06;&#x4EE3;&#x7801;&#x548C;&#x76F8;&#x5173;&#x8BBE;&#x8BA1;&#x6587;&#x6863;&#x5168;&#x90E8;&#x5F00;&#x6E90;&#x3002;</p>
+<h2 id="12-&#x7CFB;&#x7EDF;&#x7279;&#x6027;">1.2 &#x7CFB;&#x7EDF;&#x7279;&#x6027;</h2>
+<ul>
+<li>FastDCS&#x662F;&#x4E00;&#x4E2A;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x8BA1;&#x7B97;&#x7CFB;&#x7EDF;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x4F7F;&#x7528;&#x5B83;&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x7684;&#x5B8C;&#x6210;&#x5F00;&#x53D1;&#x548C;&#x90E8;&#x7F72;&#x5DE5;&#x4F5C;&#xFF0C;&#x5982;&#x540C;&#x7CFB;&#x7EDF;&#x7684;&#x540D;&#x79F0;Fast Distributed Computing System&#x3002;</li>
+<li>FastDCS&#x9002;&#x5408;&#x7528;&#x4E8E;&#x9700;&#x8981;&#x957F;&#x671F;&#x8FD0;&#x884C;&#x7684;&#x8BA1;&#x7B97;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#xFF0C;&#x5982;&#x745E;&#x8BFB;&#x7F51;&#x63D0;&#x4F9B;&#x4E86;&#x957F;&#x8FBE;4&#x5E74;&#x7684;&#x5728;&#x7EBF;&#x6587;&#x6863;&#x8F6C;&#x6362;&#x670D;&#x52A1;&#xFF0C;&#x5B83;&#x548C;MapReduce&#x6A21;&#x5F0F;&#x7684;&#x6279;&#x5904;&#x7406;&#x7CFB;&#x7EDF;&#x6709;&#x5F88;&#x5927;&#x7684;&#x533A;&#x522B;&#x3002;</li>
+</ul>
+<h2 id="13-&#x7CFB;&#x7EDF;&#x8BF4;&#x660E;">1.3 &#x7CFB;&#x7EDF;&#x8BF4;&#x660E;</h2>
+<p>&#x4ECE;&#x7CFB;&#x7EDF;&#x7EC4;&#x6210;&#x5212;&#x5206;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x770B;&#xFF0C;FastDCS&#x5305;&#x62EC;&#x4E86;&#x7BA1;&#x7406;&#x8282;&#x70B9;&#xFF08;Master&#xFF09;&#x548C;&#x5DE5;&#x4F5C;&#x8282;&#x70B9;&#xFF08;Worker&#xFF09;</p>
+<ul>
+<li>&#x7BA1;&#x7406;&#x8282;&#x70B9;Master&#x5BF9;&#x6574;&#x4E2A;&#x8BA1;&#x7B97;&#x96C6;&#x7FA4;&#x7684;&#x670D;&#x52A1;&#x72B6;&#x6001;&#x3001;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x3001;&#x8BA1;&#x7B97;&#x8C03;&#x5EA6;&#x7B49;&#x670D;&#x52A1;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x3002;</li>
+<li>&#x5DE5;&#x4F5C;&#x8282;&#x70B9;Worker&#x4F5C;&#x4E3A;&#x8BA1;&#x7B97;&#x5355;&#x5143;&#x63A5;&#x53D7;Master&#x670D;&#x52A1;&#x5668;&#x7684;&#x7BA1;&#x7406;&#xFF0C;&#x5B8C;&#x6210;&#x6574;&#x4E2A;&#x8BA1;&#x7B97;&#x96C6;&#x7FA4;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x3002;</li>
+</ul>
+<h3 id="131-&#x7CFB;&#x7EDF;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x8BF4;&#x660E;">1.3.1 &#x7CFB;&#x7EDF;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x8BF4;&#x660E;</h3>
+<p><img src="assets/1-3-1.png" alt="FastDCS&#x7CFB;&#x7EDF;&#x6574;&#x4F53;&#x67B6;&#x6784;">FastDCS&#x7CFB;&#x7EDF;&#x6574;&#x4F53;&#x67B6;&#x6784;</p>
+<p>&#x5982;&#x56FE;1-3-1&#xFF0C;&#x7CFB;&#x7EDF;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x6709;&#x5982;&#x4E0B;&#x51E0;&#x4E2A;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A;</p>
+<ol>
+<li>&#x6570;&#x636E;&#x6D41;&#x5C06;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x7684;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x5728;&#x5916;&#x90E8;&#x7684;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x5982;&#x6570;&#x636E;&#x5E93;&#x6216;&#x5206;&#x5E03;&#x5F0F;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF1B;</li>
+<li>Primary master&#x8282;&#x70B9;&#x4ECE;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x4E2D;&#x4E0D;&#x65AD;&#x83B7;&#x53D6;&#x65B0;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#xFF0C;&#x4FDD;&#x5B58;&#x5728;Primary master&#x8282;&#x70B9;&#x4E2D;&#xFF1B;</li>
+<li>Secondary master&#x8282;&#x70B9;&#x4E3B;&#x52A8;&#x4ECE;Primary master&#x8282;&#x70B9;&#x83B7;&#x53D6;&#x4E00;&#x90E8;&#x5206;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x526F;&#x672C;&#xFF1B;</li>
+<li>Worker&#x8282;&#x70B9;&#x4E3B;&#x52A8;&#x4ECE;Secondary master&#x8282;&#x70B9;&#x83B7;&#x53D6;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#x5904;&#x7406;&#xFF1B;</li>
+<li>Worker&#x8282;&#x70B9;&#x5C06;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x63D0;&#x4EA4;&#x7ED9;Secondeary master&#x8282;&#x70B9;&#xFF0C;&#x6240;&#x6709;&#x7684;Secondary master&#x8282;&#x70B9;&#x5C06;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x6C47;&#x603B;&#x5230;Primary master&#x8282;&#x70B9;&#xFF1B;</li>
+<li>Primary master&#x8282;&#x70B9;&#x5C06;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x5230;&#x5916;&#x90E8;&#x7684;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x3002;</li>
+</ol>
+<h3 id="132-&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x8BF4;&#x660E;">1.3.2 &#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x8BF4;&#x660E;</h3>
+<p><img src="assets/1-3-2.png" alt="&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5904;&#x7406;&#x6D41;&#x7A0B;"></p>
+<p>&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5904;&#x7406;&#x6D41;&#x7A0B;</p>
+<p>&#x5982;&#x56FE;1-3-2&#xFF0C;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5904;&#x7406;&#x6D41;&#x7A0B;&#x6709;&#x5982;&#x4E0B;&#x51E0;&#x4E2A;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A;</p>
+<ol>
+<li>Primary master&#x8282;&#x70B9;&#x4FDD;&#x5B58;&#x4E86;&#x6574;&#x4E2A;&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x7684;&#x6240;&#x6709;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#xFF1B;</li>
+<li>&#x4E00;&#x53F0;Master&#x8282;&#x70B9;&#x52A0;&#x5165;Master&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x540E;&#xFF0C;&#x901A;&#x8FC7;Lease&#x673A;&#x5236;&#x4ECE;Primary master&#x8282;&#x70B9;&#x79DF;&#x8D41;&#x4E00;&#x90E8;&#x5206;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#xFF0C;&#x5C06;&#x526F;&#x672C;&#x6570;&#x636E;&#x4FDD;&#x5B58;&#x5728;&#x672C;&#x8282;&#x70B9;&#xFF08;&#x526F;&#x672C;&#x6709;&#x6548;&#x671F;10&#x79D2;&#xFF09;&#xFF1B;</li>
+<li>&#x6BCF;&#x4E2A;Worker&#x8282;&#x70B9;&#x5206;&#x522B;&#x4ECE;&#x6240;&#x5C5E;&#x7684;Secondary master&#x8282;&#x70B9;&#x83B7;&#x53D6;&#x4E00;&#x4EFD;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF1B;</li>
+<li>&#x5F53;Secondary master&#x8282;&#x70B9;&#x9000;&#x51FA;&#x6216;&#x5F02;&#x5E38;&#x65F6;&#xFF0C;&#x5B83;&#x4E0B;&#x5C5E;&#x7684;Worker&#x8282;&#x70B9;&#x76F4;&#x63A5;&#x4ECE;Primary master&#x8282;&#x70B9;&#x83B7;&#x53D6;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#xFF1B;</li>
+<li>Worker&#x8282;&#x70B9;&#x5B8C;&#x6210;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x540E;&#xFF0C;&#x5C06;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x63D0;&#x4EA4;&#x7ED9;&#x6240;&#x5C5E;&#x7684;Secondary master&#x8282;&#x70B9;&#xFF0C;&#x7531;Secondary master&#x8282;&#x70B9;&#x5C06;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x6C47;&#x603B;&#x63D0;&#x4EA4;&#x7ED9;Primary master&#x8282;&#x70B9;&#x4FDD;&#x5B58;&#x5230;&#x5916;&#x90E8;&#x7684;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#xFF1B;</li>
+</ol>
+<h2 id="14-&#x67B6;&#x6784;&#x5256;&#x6790;">1.4 &#x67B6;&#x6784;&#x5256;&#x6790;</h2>
+<h3 id="141-&#x7CFB;&#x7EDF;&#x53EF;&#x9760;&#x6027;">1.4.1 &#x7CFB;&#x7EDF;&#x53EF;&#x9760;&#x6027;</h3>
+<p>FastDCS&#x901A;&#x8FC7;&#x540C;&#x65F6;&#x8FD0;&#x884C;&#x591A;&#x4E2A;&#x7BA1;&#x7406;&#x8282;&#x70B9;Master&#x6765;&#x907F;&#x514D;&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x7684;&#x5355;&#x70B9;&#x6545;&#x969C;&#x95EE;&#x9898;&#xFF0C;&#x591A;&#x4E2A;Master&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x901A;&#x8FC7;&#x73AF;&#x5F62;&#x7B97;&#x6CD5;&#x9009;&#x4E3E;&#x51FA;Primary master&#x8282;&#x70B9;&#x5BF9;&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x8FDB;&#x884C;&#x4E3B;&#x63A7;&#xFF0C;&#x5176;&#x5B83;&#x7684;Secondary master&#x8282;&#x70B9;&#x627F;&#x62C5;&#x4E00;&#x90E8;&#x5206;&#x8F85;&#x52A9;&#x7BA1;&#x7406;&#xFF0C;&#x786E;&#x4FDD;&#x4E86;&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x7684;&#x53EF;&#x9760;&#x6027;&#x7684;&#x540C;&#x65F6;&#x4E5F;&#x907F;&#x514D;&#x4E86;&#x5355;&#x70B9;&#x8FC7;&#x8F7D;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<p><img src="assets/1-4-1.png" alt="Master&#x9009;&#x4E3E;&#x7B97;&#x6CD5;"></p>
+<p>Master&#x9009;&#x4E3E;&#x7B97;&#x6CD5;</p>
+<p>&#x5982;&#x56FE;1-4-1&#xFF0C;FastDCS&#x7CFB;&#x7EDF;&#x4E2D;&#x6240;&#x6709;Master&#x8282;&#x70B9;&#x6309;&#x7167;&#x524D;&#x540E;&#x987A;&#x5E8F;&#x7EC4;&#x6210;&#x4E00;&#x4E2A;&#x73AF;&#x65B0;&#x5F62;&#x7ED3;&#x6784;&#xFF0C;&#x6BCF;&#x4E2A;Master&#x8282;&#x70B9;&#x90FD;&#x4FDD;&#x5B58;&#x4E86;&#x8FD9;&#x4E2A;&#x73AF;&#x5F62;&#x7ED3;&#x6784;&#x7684;&#x6392;&#x5E8F;&#x8868;&#xFF0C;&#x56E0;&#x6B64;&#x6BCF;&#x4E2A;Master&#x8282;&#x70B9;&#x90FD;&#x77E5;&#x9053;&#x81EA;&#x5DF1;&#x7684;&#x6240;&#x6709;&#x540E;&#x7EE7;Master&#x8282;&#x70B9;&#x3002;</p>
+<p><strong>Master&#x9009;&#x4E3E;&#x7B97;&#x6CD5;&#x8BF4;&#x660E;</strong></p>
+<p>&#x5047;&#x8BBE;&#x5F53;Master(1)&#x8282;&#x70B9;&#x53D1;&#x73B0;&#x5230;Primary master&#x4E0D;&#x518D;&#x5DE5;&#x4F5C;&#x65F6;&#xFF0C;&#x5B83;&#x5C06;&#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x53EC;&#x96C6;&#x9009;&#x4E3E;&#x7684;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<ol>
+<li>Master(1)&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x81EA;&#x5DF1;&#x8FDB;&#x7A0B;&#x7F16;&#x53F7;&#x7684; ELECTION &#x7ED9;&#x540E;&#x7EE7;&#x8FDB;&#x7A0B;&#xFF0C;&#x5982;&#x679C;&#x76F4;&#x63A5;&#x540E;&#x7EE7;&#x8FDB;&#x7A0B;&#x6CA1;&#x6709;&#x54CD;&#x5E94;&#xFF0C;Master(1)&#x5C31;&#x5C06;&#x6D88;&#x606F;&#x53D1;&#x9001;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;Master&#x8282;&#x70B9;&#xFF0C;&#x76F4;&#x5230;&#x627E;&#x5230;&#x4E00;&#x4E2A;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#x7684;Master&#x8282;&#x70B9;&#xFF1B;</li>
+<li>Master(2)&#x63A5;&#x6536;&#x5230; ELECTION &#x6D88;&#x606F;&#x7684;&#x8FDB;&#x7A0B;&#x5C06;&#x81EA;&#x5DF1;&#x7684;&#x7F16;&#x53F7;&#x589E;&#x52A0;&#x5230; ELECTION &#x6D88;&#x606F;&#x4E2D;&#xFF0C;&#x7136;&#x540E;&#x6309;&#x7167;&#x540C;&#x6837;&#x7684;&#x65B9;&#x5F0F;&#x5C06;&#x6D88;&#x606F;&#x53D1;&#x9001;&#x7ED9;&#x540E;&#x7EE7;Master&#x8282;&#x70B9;&#x3002;&#x8FD9;&#x6837;&#xFF0C;&#x6D88;&#x606F;&#x5728;&#x73AF;&#x4E0A;&#x7684;&#x4F20;&#x9012;&#x5C06;&#x6784;&#x9020;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x6240;&#x6709;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#x7684;Master&#x7684;&#x7F16;&#x53F7;&#x8868;&#xFF1B;</li>
+<li>&#x5F53; ELECTION &#x6D88;&#x606F;&#x6700;&#x540E;&#x56DE;&#x5230;&#x53EC;&#x96C6;&#x9009;&#x4E3E;&#x7684;Master&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x6D88;&#x606F;&#x4E2D;&#x6700;&#x5927;&#x7F16;&#x53F7;&#x7684;Master&#x8282;&#x70B9;&#x5373;&#x6210;&#x4E3A;&#x9009;&#x4E3E;&#x7684;&#x80DC;&#x5229;&#x8005;&#x3002;&#x53EC;&#x96C6;&#x9009;&#x4E3E;&#x7684;&#x8FDB;&#x7A0B;&#x5C06;&#x6D88;&#x606F;&#x7C7B;&#x578B;&#x6539;&#x4E3A; COORDINATOR&#xFF0C;&#x7136;&#x540E;&#x5C06;&#x6D88;&#x606F;&#x6CBF;&#x7740;&#x73AF;&#x91CD;&#x65B0;&#x53D1;&#x9001;&#x4E00;&#x6B21;&#xFF0C;&#x5C06;&#x9009;&#x4E3E;&#x7ED3;&#x679C;&#x901A;&#x77E5;&#x6240;&#x6709;&#x7684;Master&#x8282;&#x70B9;&#xFF1B;</li>
+<li>&#x5F53; COORDINATOR &#x6D88;&#x606F;&#x91CD;&#x65B0;&#x56DE;&#x5230;&#x53EC;&#x96C6;&#x9009;&#x4E3E;&#x7684;Master&#x8282;&#x70B9;&#x65F6;&#xFF0C;&#x7B97;&#x6CD5;&#x7EC8;&#x6B62;&#xFF1B;</li>
+</ol>
+<p>&#x540C;&#x6837;&#xFF0C;&#x5728;&#x73AF;&#x9009;&#x4E3E;&#x7B97;&#x6CD5;&#x4E2D;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x540C;&#x65F6;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x53EC;&#x96C6;&#x9009;&#x4E3E;&#x7684;&#x8FC7;&#x7A0B;&#x3002;&#x5F53;&#x5728;&#x8FD9;&#x4E2A;&#x65F6;&#x523B;&#x73AF;&#x7ED3;&#x6784;&#x4E0D;&#x53D8;&#x65F6;&#xFF0C;&#x53EA;&#x662F;&#x6D88;&#x606F;&#x6570;&#x91CF;&#x591A;&#x4E00;&#x4E9B;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x7ED3;&#x679C;&#x4E5F;&#x662F;&#x4E00;&#x81F4;&#x7684;&#x3002;</p>
+<h3 id="142-&#x7CFB;&#x7EDF;&#x53EF;&#x7528;&#x6027;">1.4.2 &#x7CFB;&#x7EDF;&#x53EF;&#x7528;&#x6027;</h3>
+<p><img src="assets/1-4-2.png" alt="primary-secondary&#x534F;&#x8BAE;"></p>
+<p>primary-secondary&#x534F;&#x8BAE;</p>
+<p>&#x5982;&#x56FE;1-4-2&#xFF0C;FastDCS&#x91C7;&#x7528;primary-secondary&#xFF08;&#x4E5F;&#x79F0; primary-backup&#xFF09;&#x7684;&#x4E2D;&#x5FC3;&#x5316;&#x526F;&#x672C;&#x63A7;&#x5236;&#x534F;&#x8BAE;&#x3002; &#x5728;FastDCS&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x6570;&#x636E;&#x88AB;&#x5206;&#x4E3A;&#x7531;Primary master&#x8282;&#x70B9;&#x7BA1;&#x7406;&#x7740;&#x7684;&#x5143;&#x6570;&#x636E;&#x548C;&#x7531;Secondary master&#x8282;&#x70B9;&#x7BA1;&#x7406;&#x7740;&#x7684;&#x6570;&#x636E;&#x526F;&#x672C;&#x3002;</p>
+<h4 id="primary-master&#x8282;&#x70B9;&#x8D1F;&#x8D23;&#x7EF4;&#x62A4;&#x6570;&#x636E;&#x7684;&#x66F4;&#x65B0;&#x3001;&#x5E76;&#x53D1;&#x63A7;&#x5236;&#x3001;&#x534F;&#x8C03;&#x526F;&#x672C;&#x7684;&#x4E00;&#x81F4;&#x6027;">Primary master&#x8282;&#x70B9;&#x8D1F;&#x8D23;&#x7EF4;&#x62A4;&#x6570;&#x636E;&#x7684;&#x66F4;&#x65B0;&#x3001;&#x5E76;&#x53D1;&#x63A7;&#x5236;&#x3001;&#x534F;&#x8C03;&#x526F;&#x672C;&#x7684;&#x4E00;&#x81F4;&#x6027;</h4>
+<ol>
+<li>&#x6570;&#x636E;&#x66F4;&#x65B0;&#x90FD;&#x7531;Primary&#x8282;&#x70B9;&#x534F;&#x8C03;&#x5B8C;&#x6210;&#xFF1B;</li>
+<li>primary master&#x8282;&#x70B9;&#x4ECE;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x83B7;&#x53D6;&#x65B0;&#x6570;&#x636E;&#xFF1B;</li>
+<li>Primary master&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x5E76;&#x53D1;&#x63A7;&#x5236;&#x5373;&#x786E;&#x5B9A;&#x5E76;&#x53D1;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x7684;&#x5148;&#x540E;&#x987A;&#x5E8F;&#xFF1B;</li>
+<li>Primary master&#x8282;&#x70B9;&#x5C06;&#x66F4;&#x65B0;&#x64CD;&#x4F5C;&#x53D1;&#x9001;&#x7ED9;secondary &#x8282;&#x70B9;&#xFF1B;</li>
+<li>Primary master&#x6839;&#x636E;secondary master&#x8282;&#x70B9;&#x7684;&#x5B8C;&#x6210;&#x60C5;&#x51B5;&#x51B3;&#x5B9A;&#x66F4;&#x65B0;&#x662F;&#x5426;&#x6210;&#x529F;&#x5E76;&#x5C06;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#xFF1B;</li>
+</ol>
+<h4 id="secondary-master&#x8282;&#x70B9;&#x7BA1;&#x7406;&#x4E00;&#x90E8;&#x5206;&#x6570;&#x636E;&#x526F;&#x672C;">Secondary master&#x8282;&#x70B9;&#x7BA1;&#x7406;&#x4E00;&#x90E8;&#x5206;&#x6570;&#x636E;&#x526F;&#x672C;</h4>
+<ol>
+<li>Primary master&#x8282;&#x70B9;&#x5C06;&#x6570;&#x636E;&#x5206;&#x4E3A;&#x6570;&#x636E;&#x6BB5;&#xFF0C;&#x4EE5;&#x6570;&#x636E;&#x6BB5;&#x4E3A;&#x526F;&#x672C;&#x7684;&#x57FA;&#x672C;&#x5355;&#x4F4D;&#xFF1B;</li>
+<li>&#x5C06;&#x6570;&#x636E;&#x526F;&#x672C;&#x5206;&#x6563;&#x5230;&#x96C6;&#x7FA4;&#x4E2D;&#x4E2A;&#xFF0C;&#x6BCF;&#x4E2A;Secondary master&#x8282;&#x70B9;&#x4E0A;&#x90FD;&#x6709;&#x4E00;&#x90E8;&#x5206;&#x5143;&#x6570;&#x636E;&#x7684;&#x526F;&#x672C;&#xFF1B;</li>
+<li>Secondary master&#x8282;&#x70B9;&#x4F7F;&#x7528;&#x6570;&#x636E;&#x526F;&#x672C;&#x5B8C;&#x6210;&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x7684;&#x4E00;&#x90E8;&#x5206;&#x7BA1;&#x7406;&#x5DE5;&#x4F5C;&#xFF0C;&#x6765;&#x5206;&#x62C5;&#x7CFB;&#x7EDF;&#x7684;&#x6574;&#x4F53;&#x538B;&#x529B;&#xFF1B;</li>
+</ol>
+<h3 id="143-&#x6570;&#x636E;&#x4E00;&#x81F4;&#x6027;">1.4.3 &#x6570;&#x636E;&#x4E00;&#x81F4;&#x6027;</h3>
+<p><img src="assets/1-4-3.png" alt="Lease&#x673A;&#x5236;"></p>
+<p>Lease&#x673A;&#x5236;</p>
+<p>&#x5982;&#x56FE;1-4-3&#xFF0C;FastDCS&#x91C7;&#x7528;Lease&#x673A;&#x5236;&#x80FD;&#x591F;&#x786E;&#x4FDD;&#x5728;&#x670D;&#x52A1;&#x5668;&#x6216;&#x7F51;&#x7EDC;&#x5F02;&#x5E38;&#x7B49;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x4ECD;&#x7136;&#x4FDD;&#x6301;&#x5206;&#x6563;&#x5728;&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x5177;&#x6709;&#x5F88;&#x5F3A;&#x7684;&#x4E00;&#x81F4;&#x6027;&#x3002;</p>
+<ul>
+<li>Primary master&#x8282;&#x70B9;&#x5728;&#x5411;&#x5404;&#x4E2A;Secondary master&#x8282;&#x70B9;&#x53D1;&#x9001;&#x6570;&#x636E;&#x7684;&#x540C;&#x65F6;&#x5411;&#x8282;&#x70B9;&#x9881;&#x53D1;&#x4E00;&#x4E2A;lease;</li>
+<li>Primary master&#x8282;&#x70B9;&#x5728;lease&#x6709;&#x6548;&#x671F;&#x5185;&#xFF0C;&#x4FDD;&#x8BC1;&#x4E0D;&#x5BF9;&#x5DF2;&#x7ECF;&#x9881;&#x53D1;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x4FEE;&#x6539;;</li>
+<li>Primary master&#x8282;&#x70B9;&#x5728;lease&#x6709;&#x6548;&#x671F;&#x5931;&#x6548;&#x540E;&#xFF0C;&#x624D;&#x4F1A;&#x5BF9;&#x9881;&#x53D1;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x4E0B;&#x53D1;&#x6216;&#x4FEE;&#x6539;;</li>
+<li>&#x53EA;&#x6709;Primary master&#x8282;&#x70B9;&#x624D;&#x80FD;&#x4FEE;&#x6539;&#x5143;&#x6570;&#x636E;&#xFF0C;&#x6240;&#x4EE5;&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x95F4;Primary master&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x90FD;&#x662F;&#x6700;&#x65B0;&#x7684;;</li>
+</ul>
+<h3 id="144-&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8BF4;&#x660E;">1.4.4 &#x6570;&#x636E;&#x7ED3;&#x6784;&#x8BF4;&#x660E;</h3>
+<p>FastDCS&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x6587;&#x4EF6;&#x5728;/src/server/tracker_protocol.proto&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<p>&#x5176;&#x4E2D;&#x53EA;&#x6709;FdcsTask&#x3001;KeyValuesPair&#x548C;KeyValuePair&#x4E09;&#x4E2A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x9700;&#x8981;&#x5F00;&#x53D1;&#x8005;&#x4E86;&#x89E3;&#x638C;&#x63E1;&#xFF0C;&#x5176;&#x4ED6;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7528;&#x4E8E;FastDCS&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x7684;&#x5904;&#x7406;&#xFF0C;&#x4E0E;&#x5F00;&#x53D1;&#x8005;&#x65E0;&#x5173;&#x3002;</p>
+<p>&#x6570;&#x636E;&#x7ED3;&#x6784;FdcsTask&#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x7684;&#x8C03;&#x5EA6;&#x548C;&#x4FDD;&#x5B58;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#xFF0C;&#x4E3A;&#x4E86;&#x8BA9;FdcsTask&#x80FD;&#x591F;&#x4EE5;&#x4E00;&#x79CD;&#x901A;&#x7528;&#x7684;&#x7ED3;&#x6784;&#x6EE1;&#x8DB3;&#x5404;&#x79CD;&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E2D;&#x6570;&#x636E;&#x4F20;&#x8F93;&#x7684;&#x9700;&#x8981;&#xFF0C; FastDCS&#x4F7F;&#x7528;&#x4E86;&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x591A;&#x4E2A;KV&#x952E;&#x503C;&#x5BF9;&#x7684;&#x53D8;&#x91CF;&#x6765;&#x6EE1;&#x8DB3;&#x9700;&#x6C42;&#xFF0C;&#x540C;&#x65F6;&#x4F7F;&#x7528;Google Protocol Buffers&#x5BF9;&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8FDB;&#x884C;&#x5B9A;&#x4E49;&#x4EE5;&#x53CA;&#x5E8F;&#x5217;&#x5316;&#x64CD;&#x4F5C;&#x3002;</p>
+<h4 id="1441-fdcstask&#xFF1A;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x6570;&#x636E;&#x7ED3;&#x6784;">1.4.4.1 FdcsTask&#xFF1A;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x6570;&#x636E;&#x7ED3;&#x6784;</h4>
+<pre><code class="lang-c++">message FdcsTask {
+  <span class="hljs-comment">// &#x4EFB;&#x52A1;ID</span>
+  required <span class="hljs-built_in">string</span> task_id = <span class="hljs-number">1</span> [<span class="hljs-keyword">default</span> = <span class="hljs-string">&quot;&quot;</span>];
+  <span class="hljs-comment">// &#x4EFB;&#x52A1;&#x79DF;&#x7EA6;&#x6709;&#x6548;&#x65F6;&#x95F4;</span>
+  optional int64 lease_time = <span class="hljs-number">2</span> [<span class="hljs-keyword">default</span> = <span class="hljs-number">0</span>];
+  <span class="hljs-comment">// &#x591A;&#x4E2A;KeyValuesPair&#x6570;&#x636E;&#x7ED3;&#x6784;</span>
+  repeated KeyValuesPair key_values_pairs = <span class="hljs-number">3</span>;
+}
+<span class="hljs-comment">// &#x4E3A;&#x65B9;&#x4FBF;&#x7406;&#x89E3;FdcsTask&#x6570;&#x636E;&#x7ED3;&#x6784;</span>
+<span class="hljs-comment">// &#x4E0B;&#x9762;&#x5217;&#x51FA;&#x4E86;&#x5728;Demo&#x7A0B;&#x5E8F;&apos;&#x5355;&#x8BCD;&#x6392;&#x5E8F;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;&apos;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;FdcsTask&#x53D8;&#x91CF;&#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</span>
+FdcsTask = {
+  task_id = id1, 
+  key_values_pairs = [
+    {key=<span class="hljs-string">&apos;A&apos;</span>, value=[{key=&#x5355;&#x8BCD;<span class="hljs-number">1</span>, value=count1},{key=&#x5355;&#x8BCD;<span class="hljs-number">11</span>, value=count11}, ...]}
+    {key=<span class="hljs-string">&apos;B&apos;</span>, value=[{key=&#x5355;&#x8BCD;<span class="hljs-number">1</span>, value=count1},{key=&#x5355;&#x8BCD;<span class="hljs-number">11</span>, value=count11}, ...]}
+    {key=<span class="hljs-string">&apos;C&apos;</span>, value=[{key=&#x5355;&#x8BCD;<span class="hljs-number">1</span>, value=count1},{key=&#x5355;&#x8BCD;<span class="hljs-number">11</span>, value=count11}, ...]}
+    ...
+  ]
+}
+</code></pre>
+<p>FastDCS&#x4E2D;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x6570;&#x636E;&#x7ED3;&#x6784;FdcsTask&#x6709;&#x53EA;&#x6709;3&#x4E2A;&#x53D8;&#x91CF;&#x7EC4;&#x6210;&#xFF0C;&#x5206;&#x522B;&#x662F;&#x4EFB;&#x52A1;ID&#x3001;&#x4EFB;&#x52A1;&#x79DF;&#x7EA6;&#x6709;&#x6548;&#x65F6;&#x95F4;&#x3001;&#x4E00;&#x5BF9;&#x591A;KV&#x952E;&#x503C;&#x5BF9;&#x4E09;&#x4E2A;&#x90E8;&#x5206;&#x7EC4;&#x6210;&#xFF1A;</p>
+<ul>
+<li>task_id&#xFF08;&#x4EFB;&#x52A1;ID&#xFF09;&#xFF1A;&#x7528;&#x4E8E;&#x5728;&#x6574;&#x4E2A;&#x5DE5;&#x4F5C;&#x4EFB;&#x52A1;&#x4E2D;&#x8FDB;&#x884C;&#x552F;&#x4E00;&#x6807;&#x793A;&#x67D0;&#x4E00;&#x9879;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#xFF1B;</li>
+<li>lease_time&#xFF08;&#x4EFB;&#x52A1;&#x79DF;&#x7EA6;&#x6709;&#x6548;&#x65F6;&#x95F4;&#xFF09;&#xFF1A;FastDCS&#x7CFB;&#x7EDF;&#x5185;&#x90E8;&#x63A7;&#x5236;&#x6570;&#x636E;&#x6709;&#x6548;&#x6027;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5FFD;&#x7565;&#x8BE5;&#x53D8;&#x91CF;;</li>
+<li>key_values_pairs&#xFF08;&#x4E00;&#x5BF9;&#x591A;KV&#x952E;&#x503C;&#xFF09;&#xFF1A;&#x6BCF;&#x4E2A;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x901A;&#x8FC7;&#x8BE5;&#x53D8;&#x91CF;&#x80FD;&#x591F;&#x4FDD;&#x5B58;&#x591A;&#x4E2A;&#x4E00;&#x5BF9;&#x591A;&#x7684;K-V&#x952E;&#x503C;&#x5BF9;&#x6570;&#x636E;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x591A;&#x4E2A;&#x53D8;&#x91CF;;</li>
+</ul>
+<h4 id="1442-keyvaluespair&#xFF1A;&#x4E00;&#x5BF9;&#x591A;kv&#x952E;&#x503C;&#x5BF9;&#x6570;&#x636E;&#x7ED3;&#x6784;">1.4.4.2 KeyValuesPair&#xFF1A;&#x4E00;&#x5BF9;&#x591A;KV&#x952E;&#x503C;&#x5BF9;&#x6570;&#x636E;&#x7ED3;&#x6784;</h4>
+<pre><code class="lang-C++">message KeyValuesPair {
+  optional bytes key = <span class="hljs-number">1</span>;
+  <span class="hljs-comment">// value&#x4E2D;&#x4EE5;&#x5B57;&#x8282;&#x7684;&#x65B9;&#x5F0F;&#x4FDD;&#x5B58;&#x4E86;&#x591A;&#x4E2A;KeyValuePair&#x6570;&#x636E;&#x7ED3;&#x6784;</span>
+  repeated bytes value = <span class="hljs-number">2</span>;
+}
+<span class="hljs-comment">// &#x4E3A;&#x65B9;&#x4FBF;&#x7406;&#x89E3;KeyValuesPair&#x6570;&#x636E;&#x7ED3;&#x6784;</span>
+<span class="hljs-comment">// &#x4E0B;&#x9762;&#x5217;&#x51FA;&#x4E86;&#x5728;Demo&#x7A0B;&#x5E8F;&apos;&#x5355;&#x8BCD;&#x6392;&#x5E8F;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;&apos;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;KeyValuesPair&#x53D8;&#x91CF;&#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</span>
+key_values_pairs = {key=<span class="hljs-string">&apos;A&apos;</span>, value=[{key=&#x5355;&#x8BCD;<span class="hljs-number">1</span>, value=count1},{key=&#x5355;&#x8BCD;<span class="hljs-number">11</span>, value=count11}, ...]}
+</code></pre>
+<ul>
+<li>KeyValuesPair&#x5176;&#x4E2D;&#x7684;Key&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x7684;&#x540D;&#x79F0;&#xFF0C;value&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x8BE5;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x7684;&#x6570;&#x636E;&#xFF1B;</li>
+<li>value&#x4E2D;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x4E00;&#x5BF9;&#x4E00;KV&#x952E;&#x503C;&#x5BF9;KeyValuePair&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8FDB;&#x884C;&#x586B;&#x5145;&#x3002;</li>
+</ul>
+<h4 id="1443-keyvaluepair&#xFF1A;&#x4E00;&#x5BF9;&#x4E00;kv&#x952E;&#x503C;&#x5BF9;">1.4.4.3 KeyValuePair&#xFF1A;&#x4E00;&#x5BF9;&#x4E00;KV&#x952E;&#x503C;&#x5BF9;</h4>
+<pre><code class="lang-c++">message KeyValuePair {
+  optional bytes key = <span class="hljs-number">1</span>;
+  optional bytes value = <span class="hljs-number">2</span>;
+}
+<span class="hljs-comment">// &#x4E3A;&#x65B9;&#x4FBF;&#x7406;&#x89E3;KeyValuesPair&#x6570;&#x636E;&#x7ED3;&#x6784;</span>
+<span class="hljs-comment">// &#x4E0B;&#x9762;&#x5217;&#x51FA;&#x4E86;&#x5728;Demo&#x7A0B;&#x5E8F;&apos;&#x5355;&#x8BCD;&#x6392;&#x5E8F;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;&apos;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;KeyValuePair&#x53D8;&#x91CF;&#x5185;&#x90E8;&#x7684;&#x6570;&#x636E;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#xFF1A;</span>
+{key=&#x5355;&#x8BCD;<span class="hljs-number">1</span>, value=count1}
+</code></pre>
+<ul>
+<li>KeyValuePair&#x5176;&#x4E2D;&#x7684;Key&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x7684;&#x540D;&#x79F0;&#xFF0C;value&#x7528;&#x6765;&#x4FDD;&#x5B58;&#x8BE5;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x7684;&#x6570;&#x636E;&#xFF1B;</li>
+<li>value&#x4E2D;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5177;&#x4F53;&#x7684;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x586B;&#x5145;&#xFF1B;</li>
+<li>&#x6CE8;&#x610F;&#xFF1A;KeyValuesPair &#x548C; KeyValuePair&#x6570;&#x636E;&#x7ED3;&#x6784;&#x540D;&#x79F0;&#x53EA;&#x5DEE;&#x4E00;&#x4E2A;&#x8868;&#x793A;&#x662F;&#x590D;&#x6570;&#x7684;&#x5B57;&#x6BCD;s&#xFF1B;</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="FastDCS-introduction.html" class="navigation navigation-prev " aria-label="Previous page: FastDCS-分布式计算系统介绍">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="FastDCS 开发实例.html" class="navigation navigation-next " aria-label="Next page: FastDCS-开发实例">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"FastDCS-架构介绍","level":"1.4.1","depth":2,"next":{"title":"FastDCS-开发实例","level":"1.4.2","depth":2,"path":"FastDCS/FastDCS 开发实例.md","ref":"FastDCS/FastDCS 开发实例.md","articles":[]},"previous":{"title":"FastDCS-分布式计算系统介绍","level":"1.4","depth":1,"path":"FastDCS/FastDCS-introduction.md","ref":"FastDCS/FastDCS-introduction.md","articles":[{"title":"FastDCS-架构介绍","level":"1.4.1","depth":2,"path":"FastDCS/FastDCS 架构介绍.md","ref":"FastDCS/FastDCS 架构介绍.md","articles":[]},{"title":"FastDCS-开发实例","level":"1.4.2","depth":2,"path":"FastDCS/FastDCS 开发实例.md","ref":"FastDCS/FastDCS 开发实例.md","articles":[]},{"title":"FastDCS 开发说明","level":"1.4.3","depth":2,"path":"FastDCS/FastDCS 开发说明.md","ref":"FastDCS/FastDCS 开发说明.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"FastDCS/FastDCS 架构介绍.md","mtime":"2018-05-11T09:07:32.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-11T09:42:06.510Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

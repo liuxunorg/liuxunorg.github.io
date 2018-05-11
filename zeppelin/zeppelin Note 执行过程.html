@@ -1,0 +1,443 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>zeppelin Note 执行过程 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="zeppelin 中运行 spark streaming kakfa 实时可视化.html" />
+    
+    
+    <link rel="prev" href="zeppelin Note 运行方式.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Zeppelin
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="zeppelin Note 运行方式.html">
+            
+                <a href="zeppelin Note 运行方式.html">
+            
+                    
+                    zeppelin Note 运行方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2" data-path="zeppelin Note 执行过程.html">
+            
+                <a href="zeppelin Note 执行过程.html">
+            
+                    
+                    zeppelin Note 执行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="zeppelin 中运行 spark streaming kakfa 实时可视化.html">
+            
+                <a href="zeppelin 中运行 spark streaming kakfa 实时可视化.html">
+            
+                    
+                    zeppelin 中运行 spark streaming kakfa 实时可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Atlas/Apache Atlas 数据治理.html">
+            
+                <a href="../Atlas/Apache Atlas 数据治理.html">
+            
+                    
+                    Apache-Atlas-数据治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../FastDCS/FastDCS-introduction.html">
+            
+                <a href="../FastDCS/FastDCS-introduction.html">
+            
+                    
+                    FastDCS-分布式计算系统介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../FastDCS/FastDCS 架构介绍.html">
+            
+                <a href="../FastDCS/FastDCS 架构介绍.html">
+            
+                    
+                    FastDCS-架构介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../FastDCS/FastDCS 开发实例.html">
+            
+                <a href="../FastDCS/FastDCS 开发实例.html">
+            
+                    
+                    FastDCS-开发实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../FastDCS/FastDCS 开发说明.html">
+            
+                <a href="../FastDCS/FastDCS 开发说明.html">
+            
+                    
+                    FastDCS 开发说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >zeppelin Note 执行过程</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="zeppelin&#x6E90;&#x7801;&#x5206;&#x6790;-note-&#x6267;&#x884C;&#x8FC7;&#x7A0B;">zeppelin&#x6E90;&#x7801;&#x5206;&#x6790;-Note &#x6267;&#x884C;&#x8FC7;&#x7A0B;</h2>
+<p><img src="assets/Center-20180508172634502.png" alt="img"></p>
+<p>&#x4E0A;&#x56FE;&#x662F;zeppelin&#x7684;&#x524D;&#x540E;&#x53F0;&#x4EA4;&#x4E92;&#x6A21;&#x578B;&#xFF0C;zeppelin&#x91C7;&#x7528;&#x5355;&#x72EC;&#x7684;jvm&#x6765;&#x542F;&#x52A8;interpreter&#x8FDB;&#x7A0B;&#xFF0C;&#x8BE5;Interpreter&#x8FDB;&#x7A0B;&#x4E0E;zeppelinServer&#x8FDB;&#x7A0B;&#x4E4B;&#x95F4;&#x91C7;&#x7528;Thrift&#x534F;&#x8BAE;&#x901A;&#x4FE1;&#xFF0C;&#x5176;&#x4E2D;RemoteInterpreterProcess&#x662F;Thrift-Client&#x7AEF;&#xFF0C;&#x800C;&#x76F8;&#x5E94;&#x7684;RemoteInterpreterServer&#x662F;Thrift-Server&#x7AEF;&#x3002;</p>
+<p>Paragraph&#x7684;&#x6267;&#x884C;&#x5206;&#x6210;&#x201C;&#x4ECE;&#x524D;&#x7AEF;UI&#x63D0;&#x4EA4;ParagraphJob&#x5230;&#x5176;&#x76F8;&#x5173;&#x7684;Interpreter&#x7684;Scheduler&#x201D;&#x548C;&#x201C;Sheduler&#x6267;&#x884C;&#x201D;2&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x8FD9;2&#x4E2A;&#x90E8;&#x5206;&#x662F;&#x5F02;&#x6B65;&#x6267;&#x884C;&#x7684;&#x3002;</p>
+<p><img src="assets/Center-20180508172634505.png" alt="img"></p>
+<p>&#x4EE5;&#x4E0A;&#x662F;&#x4ECE;&#x524D;&#x53F0;&#x8BF7;&#x6C42;&#x6267;&#x884C;&#x6307;&#x5B9A;&#x7684;Note&#x7684;&#x6307;&#x5B9A;&#x7684;Paragraph&#x5F00;&#x59CB;&#xFF0C;&#x5230;&#x8BE5;Paragraph&#x63D0;&#x4EA4;&#x5230;Scheduler&#x4E4B;&#x95F4;&#x7684;&#x65F6;&#x5E8F;&#x56FE;&#x3002;&#x8FD9;&#x4E2A;&#x6267;&#x884C;&#x903B;&#x8F91;&#x662F;&#x4E0E;&#x8BED;&#x8A00;&#x65E0;&#x5173;&#x7684;&#x3002;&#x4EFB;&#x4F55;&#x8BED;&#x8A00;&#x5199;&#x7684;&#x811A;&#x672C;&#xFF08;&#x5B58;&#x50A8;&#x5728;Paragraph&#x4E4B;&#x4E2D;&#xFF09;&#x90FD;&#x662F;&#x4E0A;&#x8FF0;&#x63D0;&#x4EA4;&#x6267;&#x884C;&#x7684;&#x8FC7;&#x7A0B;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x662F;Scheduler&#x6267;&#x884C;&#x8BE5;ParagraphJob&#x7684;&#x65F6;&#x5E8F;&#x56FE;&#xFF1A;</p>
+<p><img src="assets/Center-20180508172634507.png" alt="img"></p>
+<p>&#x8FD9;&#x91CC;&#x6709;&#x5982;&#x4E0B;&#x7684;&#x51E0;&#x70B9;&#x9700;&#x8981;&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>1)      InterpreterFactory&#x76EE;&#x524D;&#x5C06;&#x6240;&#x6709;&#x7684;Interpreter&#x90FD;&#x88AB;&#x5B9E;&#x4F8B;&#x5316;&#x6210;&#x4E86;RemoteInterpreter&#xFF0C;&#x53C2;&#x89C1;&#x5176;createInterpretersForNote&#x65B9;&#x6CD5;&#xFF1A;</p>
+<pre><code>for (String intName : keys) {
+  RegisteredInterpreter info = Interpreter.registeredInterpreters.get(intName);
+  if (info.getClassName().equals(className)
+      &amp;&amp; info.getGroup().equals(groupName)) {
+    Interpreter intp;
+
+    if (option.isRemote()) {//&#x6839;&#x636E;option&#x914D;&#x7F6E;&#x6765;&#x521B;&#x5EFA;
+      intp = createRemoteRepl(info.getPath(),
+          key,
+          info.getClassName(),
+          properties,
+          interpreterSetting.id());
+    } else {
+      intp = createRepl(info.getPath(),
+          info.getClassName(),
+          properties);
+    }
+</code></pre><p>&#x867D;&#x7136;InterpreterFactory&#x5728;&#x521B;&#x5EFA;&#x7684;&#x65F6;&#x5019;&#x505A;&#x4E86;&#x5224;&#x65AD;&#xFF0C;&#x4F46;&#x662F;&#x5176;&#x5B9E;&#x6240;&#x6709;&#x7684;Option.remote&#x5C5E;&#x6027;&#x90FD;&#x4E3A;true&#xFF0C;&#x53C2;&#x89C1;InterpreterFactory&#x521D;&#x59CB;&#x5316;&#x7684;&#x65B9;&#x6CD5;loadFromFile()&#xFF1A;</p>
+<pre><code>private void loadFromFile() throws IOException {
+//&#x7701;&#x7565;&#x4E86;&#x90E8;&#x5206;&#x4EE3;&#x7801;
+for (String k : info.interpreterSettings.keySet()) {
+  InterpreterSetting setting = info.interpreterSettings.get(k);
+
+  // Always use separate interpreter process
+  // While we decided to turn this feature on always (without providing
+  // enable/disable option on GUI).
+  // previously created setting should turn this feature on here.
+  setting.getOption().setRemote(true);//&#x5168;&#x90E8;&#x7F6E;&#x4E3A;true&#x4E86;
+//&#x7701;&#x7565;&#x4E86;&#x90E8;&#x5206;&#x4EE3;&#x7801;
+}
+</code></pre><p>2)      RemoteInterpreterProcess&#x5728;reference&#x76F8;&#x5173;&#x7684;InterpreterGroup&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4F1A;&#x4F7F;&#x7528;apache common-exec&#x6846;&#x67B6;&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x8FDB;&#x7A0B;&#x3002;</p>
+<pre><code>public int reference(InterpreterGroup interpreterGroup) {
+</code></pre><pre><code>synchronized (referenceCount) {
+  if (executor == null) {
+    // start server process
+    try {
+      port = RemoteInterpreterUtils.findRandomAvailablePortOnAllLocalInterfaces();//&#x968F;&#x673A;&#x53EF;&#x7528;&#x7AEF;&#x53E3;
+    } catch (IOException e1) {
+      throw new InterpreterException(e1);
+    }
+
+CommandLine cmdLine = CommandLine.parse(interpreterRunner);
+cmdLine.addArgument(&quot;-d&quot;, false);
+cmdLine.addArgument(interpreterDir, false);
+cmdLine.addArgument(&quot;-p&quot;, false);
+cmdLine.addArgument(Integer.toString(port), false);
+cmdLine.addArgument(&quot;-l&quot;, false);
+cmdLine.addArgument(localRepoDir, false);
+
+executor = new DefaultExecutor();
+
+watchdog = new ExecuteWatchdog(ExecuteWatchdog.INFINITE_TIMEOUT);
+executor.setWatchdog(watchdog);
+
+running = true;
+try {
+  Map procEnv = EnvironmentUtils.getProcEnvironment();
+  procEnv.putAll(env);
+
+  logger.info(&quot;Run interpreter process {}&quot;, cmdLine);
+  executor.execute(cmdLine, procEnv, this);//&#x542F;&#x52A8;&#x65B0;&#x7684;&#x8FDB;&#x7A0B;
+} catch (IOException e) {
+  running = false;
+  throw new InterpreterException(e);
+}
+</code></pre><p>&#x5176;&#x4E2D;interpreterRunner&#x4F1A;&#x6307;&#x5411;bin/interpreter.sh&#x811A;&#x672C;&#xFF0C;&#x8BE5;&#x811A;&#x672C;&#x7684;&#x4E3B;&#x8981;&#x529F;&#x80FD;&#x6839;&#x636E;&#x662F;&#x5426;&#x5B9A;&#x4E49;&#x4E86;SPARK_HOME&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF08;&#x5B9A;&#x4F4D;&#x5230;spark-submit&#x811A;&#x672C;&#xFF09;&#xFF0C;&#x6784;&#x5EFA;classpath&#xFF0C;&#x7136;&#x540E;&#x4EE5;&#x6307;&#x5B9A;&#x7684;port&#x8FD0;&#x884C;ZEPPELIN_SERVER&#x6307;&#x5B9A;&#x7684;&#x4E3B;&#x7C7B;&#xFF0C;&#x8BE5;&#x53D8;&#x91CF;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#xFF1A; </p>
+<pre><code>ZEPPELIN_SERVER=org.apache.zeppelin.interpreter.remote.RemoteInterpreterServer
+</code></pre><p>&#x542F;&#x52A8;&#x8FDB;&#x7A0B;&#x7684;&#x4EE3;&#x7801;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>if [[ -n &quot;${SPARK_SUBMIT}&quot; ]]; then
+    ${SPARK_SUBMIT} --class ${ZEPPELIN_SERVER} --driver-class-path &quot;${ZEPPELIN_CLASSPATH_OVERRIDES}:${CLASSPATH}&quot; --driver-java-options &quot;${JAVA_INTP_OPTS}&quot; ${SPARK_SUBMIT_OPTIONS} ${SPARK_APP_JAR} ${PORT} &amp;
+else
+    ${ZEPPELIN_RUNNER} ${JAVA_INTP_OPTS} ${ZEPPELIN_INTP_MEM} -cp ${ZEPPELIN_CLASSPATH_OVERRIDES}:${CLASSPATH} ${ZEPPELIN_SERVER} ${PORT} &amp;
+fi
+</code></pre><p>&#x800C;RemoteInterpreterServer&#x5B9E;&#x73B0;&#x4E86;RemoteInterpreterService.Iface&#xFF0C;&#x662F;Thrift&#x7684;Server&#x7AEF;&#xFF0C;RemoteInterpreterProcess&#x662F;Thrift&#x7684;client&#x7AEF;&#x3002;</p>
+<p>3)      Remote&#x7684;&#x542B;&#x4E49;&#x662F;&#xFF08;&#x81F3;&#x5C11;&#x76EE;&#x524D;&#x662F;&#xFF09;&#x201C;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#x201C;&#xFF0C;&#x4E0E;zeppelinServer&#x6240;&#x5728;&#x7684;&#x8FDB;&#x7A0B;&#x4E0D;&#x662F;&#x540C;&#x4E00;&#x4E2A;&#xFF0C;&#x8BE5;&#x8FDB;&#x7A0B;&#x5E76;&#x975E;&#x542F;&#x52A8;&#x5728;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x7684;&#x673A;&#x5668;&#x4E0A;&#xFF0C;zeppelin&#x76EE;&#x524D;&#x8FD8;&#x4E0D;&#x652F;&#x6301;&#x96C6;&#x7FA4;&#xFF0C;&#x6240;&#x6709;&#x7684;Interpreter jvm&#x90FD;&#x542F;&#x52A8;&#x5728;localhost&#x4E0A;&#x3002;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x60F3;&#x8C03;&#x8BD5;Interpreter&#x7684;&#x65B9;&#x6CD5;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x4E3A;&#x8BE5;Interpreter&#x542F;&#x52A8;&#x72EC;&#x7ACB;&#x7684;&#x8C03;&#x8BD5;&#x8FDB;&#x7A0B;&#xFF0C;&#x5728;zeppelinServer&#x6240;&#x5728;&#x7684;&#x8C03;&#x8BD5;&#x8FDB;&#x7A0B;&#x4E2D;&#x8BBE;&#x7F6E;Interpreter.interpret(Stringst, InterpreterContext context)&#x65AD;&#x70B9;&#x60F3;&#x8981;&#x547D;&#x4E2D;&#x662F;&#x884C;&#x4E0D;&#x901A;&#x7684;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="zeppelin Note 运行方式.html" class="navigation navigation-prev " aria-label="Previous page: zeppelin Note 运行方式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="zeppelin 中运行 spark streaming kakfa 实时可视化.html" class="navigation navigation-next " aria-label="Next page: zeppelin 中运行 spark streaming kakfa 实时可视化">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"zeppelin Note 执行过程","level":"1.2.2","depth":2,"next":{"title":"zeppelin 中运行 spark streaming kakfa 实时可视化","level":"1.2.3","depth":2,"path":"zeppelin/zeppelin 中运行 spark streaming kakfa 实时可视化.md","ref":"zeppelin/zeppelin 中运行 spark streaming kakfa 实时可视化.md","articles":[]},"previous":{"title":"zeppelin Note 运行方式","level":"1.2.1","depth":2,"path":"zeppelin/zeppelin Note 运行方式.md","ref":"zeppelin/zeppelin Note 运行方式.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"zeppelin/zeppelin Note 执行过程.md","mtime":"2018-05-09T09:10:46.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-11T09:42:06.510Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

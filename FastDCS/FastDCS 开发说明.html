@@ -1,0 +1,592 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>FastDCS 开发说明 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="FastDCS 开发实例.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Zeppelin
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../zeppelin/zeppelin Note 运行方式.html">
+            
+                <a href="../zeppelin/zeppelin Note 运行方式.html">
+            
+                    
+                    zeppelin Note 运行方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../zeppelin/zeppelin Note 执行过程.html">
+            
+                <a href="../zeppelin/zeppelin Note 执行过程.html">
+            
+                    
+                    zeppelin Note 执行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../zeppelin/zeppelin 中运行 spark streaming kakfa 实时可视化.html">
+            
+                <a href="../zeppelin/zeppelin 中运行 spark streaming kakfa 实时可视化.html">
+            
+                    
+                    zeppelin 中运行 spark streaming kakfa 实时可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Atlas/Apache Atlas 数据治理.html">
+            
+                <a href="../Atlas/Apache Atlas 数据治理.html">
+            
+                    
+                    Apache-Atlas-数据治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="FastDCS-introduction.html">
+            
+                <a href="FastDCS-introduction.html">
+            
+                    
+                    FastDCS-分布式计算系统介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="FastDCS 架构介绍.html">
+            
+                <a href="FastDCS 架构介绍.html">
+            
+                    
+                    FastDCS-架构介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="FastDCS 开发实例.html">
+            
+                <a href="FastDCS 开发实例.html">
+            
+                    
+                    FastDCS-开发实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.3" data-path="FastDCS 开发说明.html">
+            
+                <a href="FastDCS 开发说明.html">
+            
+                    
+                    FastDCS 开发说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >FastDCS 开发说明</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="fastdcs-&#x5F00;&#x53D1;&#x8BF4;&#x660E;">FastDCS &#x5F00;&#x53D1;&#x8BF4;&#x660E;</h2>
+<h2 id="15-&#x5F00;&#x53D1;&#x8BF4;&#x660E;">1.5 &#x5F00;&#x53D1;&#x8BF4;&#x660E;</h2>
+<p>FastDCS&#x901A;&#x8FC7;&#x7B80;&#x6D01;&#x800C;&#x6709;&#x6548;&#x7684;&#x8BBE;&#x8BA1;&#xFF0C;&#x4E3A;&#x5F00;&#x53D1;&#x8005;&#x63D0;&#x4F9B;&#x4E00;&#x5957;&#x7B80;&#x6D01;&#x800C;&#x6709;&#x6548;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x8BA1;&#x7B97;&#x6846;&#x67B6;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EA;&#x9700;&#x8981;&#x5B9A;&#x5236;&#x7531;FastDCS&#x63D0;&#x4F9B;&#x7684;&#x51E0;&#x4E2A;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;UDF&#x51FD;&#x6570;&#xFF08;User defined function&#xFF09;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B8C;&#x6210;&#x6574;&#x4E2A;&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;&#x7684;&#x5F00;&#x53D1;&#x5DE5;&#x4F5C;&#x3002;</p>
+<h3 id="152-&#x7BA1;&#x7406;&#x8282;&#x70B9;master&#x5F00;&#x53D1;&#x8BF4;&#x660E;">1.5.2 &#x7BA1;&#x7406;&#x8282;&#x70B9;Master&#x5F00;&#x53D1;&#x8BF4;&#x660E;</h3>
+<p>&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x81EA;&#x5B9A;&#x4E49;Master&#x8282;&#x70B9;&#x7C7B;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;FastDCS&#x7BA1;&#x7406;&#x8282;&#x70B9;&#x529F;&#x80FD;&#xFF0C;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x6709;&#x5982;&#x4E0B;&#x51E0;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;</p>
+<ol>
+<li>&#x81EA;&#x5B9A;&#x4E49; Master &#x7C7B;&#x540D; <code>DemoMaster</code>&#xFF0C;&#x7EE7;&#x627F; Master &#x7C7B;&#x540E;&#x5373;&#x53EF;&#x62E5;&#x6709;FastDCS&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x7684;&#x7BA1;&#x7406;&#x529F;&#x80FD;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x9700;&#x8981;&#x521D;&#x59CB;&#x5316; <code>DemoMaster</code>&#x4E2D;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x865A;&#x51FD;&#x6570; InitialTracker &#x4E2D;&#x5B9E;&#x73B0;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x9700;&#x8981;&#x91CA;&#x653E; <code>DemoMaster</code>&#x4E2D;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x865A;&#x51FD;&#x6570; FinalizeTracker &#x4E2D;&#x5B9E;&#x73B0;&#xFF1B;</li>
+<li>&#x5FC5;&#x987B;&#x5728;&#x865A;&#x51FD;&#x6570; ImportTaskUDF &#x4E2D;&#x5B9E;&#x73B0; DemoMaster &#x4E2D;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5BFC;&#x5165;&#x5230;&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#xFF1B;</li>
+<li>&#x5FC5;&#x987B;&#x5728;&#x865A;&#x51FD;&#x6570; ExportTaskUDF &#x4E2D;&#x5B9E;&#x73B0; DemoMaster &#x4E2D;&#x7684;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x5230;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#xFF1B;</li>
+<li>&#x5FC5;&#x987B;&#x901A;&#x8FC7;REGISTER_FASTDCS_TRACKER&#x5B8F;&#xFF0C;&#x5C06;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x540D; <code>DemoMaster</code> &#x6CE8;&#x518C;&#x5230;FastDCS&#x4E2D;&#xFF1B;</li>
+</ol>
+<p><strong>&#x7BA1;&#x7406;&#x8282;&#x70B9;Master&#x5F00;&#x53D1;&#x6846;&#x67B6;</strong></p>
+<pre><code class="lang-c++"><span class="hljs-comment">// 1.&#x81EA;&#x5B9A;&#x4E49;Master&#x7C7B;&#x540D;`DemoMaster`&#x6D3E;&#x751F;&#x5728;Master&#x4E4B;&#x4E0A;</span>
+<span class="hljs-keyword">class</span> DemoMaster : <span class="hljs-keyword">public</span> Master {
+    <span class="hljs-comment">// 2.Master&#x8282;&#x70B9;&#x542F;&#x52A8;&#x540E;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">InitialTracker</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> settings_s settings)</span> </span>{
+        <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x5728; DemoMaster &#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;</span>
+        ......
+
+        Master::InitialTracker(settings);
+    };
+
+    <span class="hljs-comment">// 3.Master&#x8282;&#x70B9;&#x9000;&#x51FA;&#x65F6;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">FinalizeTracker</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// &#x91CA;&#x653E;&#x5728; DemoMaster &#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;</span>
+        ......
+
+        Master::FinalizeTracker();
+    };
+
+    <span class="hljs-comment">// 4.FastDCS&#x7A7A;&#x95F2;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x4E3B;&#x52A8;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x65B0;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5BFC;&#x5165;&#x5230;&#x670D;&#x52A1;&#x96C6;&#x7FA4;</span>
+    <span class="hljs-comment">// &#x8BE5;&#x65B9;&#x6CD5;&#x53EA;&#x4F1A;&#x7531;&#x9009;&#x4E3E;&#x4E3A;Primary master&#x7684;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x8C03;&#x7528;</span>
+    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">ImportTaskUDF</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;FdcsTask&gt; &amp;tasks)</span> </span>{
+        <span class="hljs-comment">// &#x4F60;&#x9700;&#x8981;&#x5C06;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5BFC;&#x5165;&#x5230;&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x4E2D;</span>
+        ......
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    };
+
+    <span class="hljs-comment">// 5.FastDCS&#x4F1A;&#x4E3B;&#x52A8;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x4EFB;&#x52A1;&#x7684;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x5BFC;&#x51FA;&#x5230;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;</span>
+    <span class="hljs-comment">// &#x8BE5;&#x65B9;&#x6CD5;&#x53EA;&#x4F1A;&#x7531;&#x9009;&#x4E3E;&#x4E3A;Primary master&#x7684;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x8C03;&#x7528;</span>
+    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">ExportTaskUDF</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;FdcsTask&gt; tasks)</span> </span>{
+        <span class="hljs-comment">// &#x4F60;&#x9700;&#x8981;&#x5C06;&#x8BA1;&#x7B97;&#x4FDD;&#x5B58;&#x5230;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x4E2D;</span>
+        ......
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    };
+    <span class="hljs-keyword">private</span>:
+        &#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;;
+};
+<span class="hljs-comment">// 6.&#x6CE8;&#x518C;&#x5B8F;&#x5FC5;&#x987B;&#x586B;&#x5199;&#x6B63;&#x786E;&#xFF0C;`DemoMaster`&#x662F;&#x4F60;&#x81EA;&#x5B9A;&#x4E49;&#x7684;Master&#x7C7B;&#x540D;&#x79F0;</span>
+REGISTER_FASTDCS_TRACKER(DemoMaster);
+</code></pre>
+<h3 id="153-&#x5DE5;&#x4F5C;&#x8282;&#x70B9;worker&#x5F00;&#x53D1;&#x8BF4;&#x660E;">1.5.3 &#x5DE5;&#x4F5C;&#x8282;&#x70B9;Worker&#x5F00;&#x53D1;&#x8BF4;&#x660E;</h3>
+<p>&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x81EA;&#x5B9A;&#x4E49;Worker&#x8282;&#x70B9;&#x7C7B;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;FastDCS&#x5DE5;&#x4F5C;&#x8282;&#x70B9;&#x529F;&#x80FD;&#xFF0C;&#x9700;&#x8981;&#x5904;&#x7406;&#x7684;&#x6709;&#x5982;&#x4E0B;&#x51E0;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;</p>
+<ol>
+<li>&#x81EA;&#x5B9A;&#x4E49; Worker &#x7C7B;&#x540D; <code>DemoWorker</code>&#xFF0C;&#x7EE7;&#x627F; Worker &#x7C7B;&#x540E;&#x5373;&#x53EF;&#x54CD;&#x5E94;FastDCS&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x3001;&#x5E76;&#x884C;&#x8BA1;&#x7B97;&#x7B49;&#x529F;&#x80FD;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x9700;&#x8981;&#x521D;&#x59CB;&#x5316; <code>DemoWorker</code>&#x4E2D;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x865A;&#x51FD;&#x6570; InitialTracker &#x4E2D;&#x5B9E;&#x73B0;&#xFF1B;</li>
+<li>&#x5982;&#x679C;&#x9700;&#x8981;&#x91CA;&#x653E; <code>DemoWorker</code>&#x4E2D;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x865A;&#x51FD;&#x6570; FinalizeTracker &#x4E2D;&#x5B9E;&#x73B0;&#xFF1B;</li>
+<li>&#x5FC5;&#x987B;&#x5728;&#x865A;&#x51FD;&#x6570; ComputingUDF &#x4E2D;&#x5B9E;&#x73B0; DemoWorker &#x4E2D;&#x7684;&#x8BA1;&#x7B97;&#x5904;&#x7406;&#xFF1B;</li>
+<li>&#x5FC5;&#x987B;&#x901A;&#x8FC7;REGISTER_FASTDCS_TRACKER&#x5B8F;&#xFF0C;&#x5C06;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x540D; <code>DemoWorker</code> &#x6CE8;&#x518C;&#x5230;FastDCS&#x4E2D;&#xFF1B;</li>
+</ol>
+<p><strong>&#x5DE5;&#x4F5C;&#x8282;&#x70B9;Worker&#x5F00;&#x53D1;&#x6846;&#x67B6;</strong></p>
+<pre><code class="lang-c++"><span class="hljs-comment">// 1.&#x81EA;&#x5B9A;&#x4E49;Worker&#x7C7B;&#x540D;`DemoWorker`&#x6D3E;&#x751F;&#x5728;Master&#x4E4B;&#x4E0A;</span>
+<span class="hljs-keyword">class</span> DemoWorker : <span class="hljs-keyword">public</span> Worker {
+    <span class="hljs-comment">// 2.Worker&#x8282;&#x70B9;&#x542F;&#x52A8;&#x540E;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">InitialTracker</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> settings_s settings)</span> </span>{
+        <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x5728; DemoWorker &#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;</span>
+        ......
+
+        Worker::InitialTracker(settings);
+    };
+
+    <span class="hljs-comment">// 3.Worker&#x8282;&#x70B9;&#x9000;&#x51FA;&#x65F6;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">FinalizeTracker</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">// &#x91CA;&#x653E;&#x5728; DemoWorker &#x4E2D;&#x4F7F;&#x7528;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;</span>
+        ......
+
+        Worker::FinalizeTracker();
+    };
+
+    <span class="hljs-comment">// 4.FastDCS&#x4E2D;&#x6709;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x7684;&#x4EFB;&#x52A1;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x4E3B;&#x52A8;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;</span>
+    <span class="hljs-comment">// &#x5F00;&#x53D1;&#x8005;&#x81EA;&#x884C;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">ComputingUDF</span><span class="hljs-params">(FdcsTask &amp;task)</span> </span>{
+        <span class="hljs-comment">// &#x5F00;&#x53D1;&#x8005;&#x81EA;&#x884C;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;</span>
+        ......
+
+        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+    };
+    <span class="hljs-keyword">private</span>:
+        &#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;;
+};
+<span class="hljs-comment">// 5.&#x6CE8;&#x518C;&#x5B8F;&#x5FC5;&#x987B;&#x586B;&#x5199;&#x6B63;&#x786E;&#xFF0C;`DemoWorker`&#x662F;&#x4F60;&#x81EA;&#x5B9A;&#x4E49;&#x7684;Worker&#x7C7B;&#x540D;&#x79F0;</span>
+REGISTER_FASTDCS_TRACKER(DemoWorker);
+</code></pre>
+<h2 id="16-&#x7F16;&#x8BD1;&#x548C;&#x90E8;&#x7F72;&#x8BF4;&#x660E;">1.6 &#x7F16;&#x8BD1;&#x548C;&#x90E8;&#x7F72;&#x8BF4;&#x660E;</h2>
+<p>FastDCS&#x540C;&#x6837;&#x4E5F;&#x662F;&#x975E;&#x5E38;&#x5BB9;&#x6613;&#x8FDB;&#x884C;&#x90E8;&#x7F72;&#x7684;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x7684;&#x5C06;FastDCS&#x7CFB;&#x7EDF;&#x90E8;&#x7F72;&#x5728;&#x5F88;&#x591A;&#x53F0;Linux&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x7684;&#xFF0C; FastDCS&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x8FD9;&#x4E9B;Linux&#x670D;&#x52A1;&#x5668;&#x5EFA;&#x7ACB;&#x8D77;&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#xFF0C;&#x4EE5;&#x5206;&#x5E03;&#x5F0F;&#x8FD0;&#x884C;&#x7684;&#x65B9;&#x5F0F;&#x5B8C;&#x6210;&#x5F00;&#x53D1;&#x8005;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x3002;</p>
+<h3 id="161-&#x7F16;&#x8BD1;&#x548C;&#x5B89;&#x88C5;&#x8BF4;&#x660E;">1.6.1 &#x7F16;&#x8BD1;&#x548C;&#x5B89;&#x88C5;&#x8BF4;&#x660E;</h3>
+<p>FastDCS&#x53EA;&#x80FD;&#x8FD0;&#x884C;&#x5728;Linux&#x7CFB;&#x7EDF;&#x4E2D;(&#x9700;&#x8981;&#x5185;&#x6838;&#x7248;&#x672C;&#x9AD8;&#x4E8E; 2.6 )&#xFF0C;&#x76EE;&#x524D;FastDCS-v0.1.1&#x7248;&#x672C;&#x9700;&#x8981;Google Protocol Buffers&#x5E93;&#x7684;&#x652F;&#x6301;&#x3002;</p>
+<p>FastDCS&#x7CFB;&#x7EDF;&#x8FD0;&#x884C;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x4F9D;&#x8D56;mysql&#xFF0C;&#x4F46;&#x7531;&#x4E8E;FastDCS&#x7684;demo&#x6F14;&#x793A;&#x7A0B;&#x5E8F;&#x662F;&#x4F7F;&#x7528;mysql&#x4F5C;&#x4E3A;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x4EE3;&#x7801;&#x7F16;&#x5199;&#x7684;&#xFF0C; &#x6240;&#x4EE5;&#x4F60;&#x7684;&#x7CFB;&#x7EDF;&#x4E2D;&#x9700;&#x8981;&#x6709;mysql&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x6216;&#x8005;&#x6709;&#x80FD;&#x591F;&#x63D0;&#x4F9B;&#x8FDC;&#x7A0B;&#x8FDE;&#x63A5;&#x7684;mysql&#x6570;&#x636E;&#x5E93;&#x3002;</p>
+<p><strong>&#x7F16;&#x8BD1;&#x548C;&#x5B89;&#x88C5;&#x4F9D;&#x8D56;&#x73AF;&#x5883;</strong></p>
+<ol>
+<li>&#x5B89;&#x88C5;GCC<ul>
+<li>&#x76EE;&#x524D;FastDCS&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x4F7F;&#x7528;&#x7684;&#x662F; GCC 4.4.4 &#x7248;&#x672C;&#x3002;</li>
+</ul>
+</li>
+<li>&#x5B89;&#x88C5;CMake<ul>
+<li>CMake&#x7528;&#x4E8E;&#x7BA1;&#x7406;&#x548C;&#x7F16;&#x8BD1;FastDCS&#x5DE5;&#x7A0B;&#xFF0C;&#x7531;&#x4E8E;FastDCS&#x7CFB;&#x7EDF;&#x9700;&#x8981;&#x4F7F;&#x7528;Protobuf&#xFF0C;&#x6240;&#x4EE5;CMake&#x5FC5;&#x987B;&#x5B89;&#x88C5; 2.8.0 &#x4EE5;&#x4E0A;&#x7248;&#x672C;&#x3002;</li>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <a href="http://www.cmake.org/cmake/resources/software.html" target="_blank">http://www.cmake.org/cmake/resources/software.html</a> &#x4E0B;&#x8F7D;&#x548C;&#x5B89;&#x88C5;CMake&#x7684;&#x4E8C;&#x8FDB;&#x5236;&#x7248;&#x672C;&#x3002;</li>
+<li>CMake&#x5B89;&#x88C5;&#x6559;&#x7A0B; <a href="http://liuxun.org/blog/2012/10/20/linux-xia-an-zhuang-zui-xin-ban-ben-de-cmake/" target="_blank">http://liuxun.org/blog/2012/10/20/linux-xia-an-zhuang-zui-xin-ban-ben-de-cmake/</a></li>
+</ul>
+</li>
+<li>&#x5B89;&#x88C5;Protobuf<ul>
+<li>Google Protocol Buffers&#x7528;&#x4E8E;FastDCS&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x4E4B;&#x95F4;&#x7684;&#x901A;&#x8BAF;&#x534F;&#x8BAE;&#x3002;</li>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7; <a href="http://code.google.com/p/protobuf" target="_blank">http://code.google.com/p/protobuf</a> &#x4E0B;&#x8F7D;Protobuf&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF08;&#x76EE;&#x524D;FastDCS&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x4F7F;&#x7528;&#x7684;&#x662F; Protobuf-2.4.1 &#x7248;&#x672C; &#xFF09;&#x3002;</li>
+<li>$ cd protobuf-2.4.1</li>
+<li>$ ./configure prefix=/usr/local</li>
+<li>$ make</li>
+<li>$ sudo make install</li>
+<li>&#x6DFB;&#x52A0;&#x73AF;&#x5883;&#x53D8;&#x91CF; <code>export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig/</code> &#x5230; <code>~/.bash_profile</code> &#x6587;&#x4EF6;&#x4E2D;</li>
+<li>&#x6DFB;&#x52A0;&#x52A0;&#x8F7D;&#x5E93;&#x8DEF;&#x5F84; <code>/usr/local/lib/</code> &#x5230; <code>/etc/ld.so.conf</code>&#x6587;&#x4EF6;&#x4E2D;</li>
+<li>$ ldconfig</li>
+</ul>
+</li>
+<li>&#x7F16;&#x8BD1;FastDCS<ul>
+<li>&#x4ECE; <a href="https://github.com/liuxunorg/FastDCS" target="_blank">https://github.com/liuxunorg/FastDCS</a> &#x4E2D;&#x4E0B;&#x8F7D;FastDCS&#x7684;&#x6700;&#x65B0;&#x7248;&#x672C;&#x6E90;&#x4EE3;&#x7801;&#x3002;</li>
+<li>&#x4F7F;&#x7528;&#x7F16;&#x8F91;&#x5668;&#x6253;&#x5F00; FastDCS/CMakeLists.txt &#x6587;&#x4EF6;</li>
+<li>FastDCS&#x7CFB;&#x7EDF;&#x81EA;&#x8EAB;&#x8FD0;&#x884C;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x4F9D;&#x8D56;mysql&#x7684;&#xFF0C;&#x4F46;FastDCS&#x7684;demo&#x7A0B;&#x5E8F;&#x662F;&#x4F7F;&#x7528;mysql&#x4F5C;&#x4E3A;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x8FDB;&#x884C;&#x4EE3;&#x7801;&#x7F16;&#x5199;&#x7684;&#xFF0C; &#x6240;&#x4EE5;&#x9700;&#x8981;&#x914D;&#x7F6E;mysql&#x5E93;&#x7684;&#x8DEF;&#x5F84;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x4FEE;&#x6539; <code>SET(MYSQL_DIR &quot;/usr/local/mysql&quot;)</code>&#xFF0C;&#x5C06;&#x4F60;&#x7684;mysql&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#x66FF;&#x6362; <code>/usr/local/mysql</code>&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x901A;&#x8FC7; <code>make install</code> &#x547D;&#x4EE4;&#x5C06;FastDCS&#x5B89;&#x88C5;&#x5230;&#x5176;&#x4ED6;&#x8DEF;&#x5F84;&#xFF0C;&#x4F60;&#x9700;&#x8981;&#x4FEE;&#x6539; <code>set(CMAKE_INSTALL_PREFIX &quot;/home/liuxun/FastDCS&quot;)</code>&#xFF0C; &#x5C06;&#x4F60;&#x81EA;&#x5DF1;&#x5B89;&#x88C5;&#x8DEF;&#x5F84;&#x66FF;&#x6362; <code>/home/liuxun/FastDCS</code></li>
+<li>$ cd FastDCS-v0.1.1</li>
+<li>$ mkdir build</li>
+<li>$ cd build</li>
+<li>$ cmake ..</li>
+<li>$ make</li>
+<li>$ make install</li>
+</ul>
+</li>
+</ol>
+<h3 id="162-&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;">1.6.2 &#x7CFB;&#x7EDF;&#x914D;&#x7F6E;</h3>
+<p>FastDCS&#x4E00;&#x5171;&#x6709;2&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x5206;&#x522B;&#x4F4D;&#x4E8E; /src/conf/master.conf &#x548C; /src/conf/worker.conf &#xFF0C;&#x8FD9;2&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x7684;&#x914D;&#x7F6E;&#x9879;&#x662F;&#x901A;&#x7528;&#x7684;&#x3002;</p>
+<p><strong>&#x7CFB;&#x7EDF;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x8BF4;&#x660E;</strong></p>
+<pre><code class="lang-ini"><span class="hljs-comment"># Copyright 2013-02-05</span>
+<span class="hljs-comment"># Author: Liu Xun (my@liuxun.org)</span>
+<span class="hljs-comment">#</span>
+<span class="hljs-comment"># FastDCS master config file</span>
+
+<span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x6210; true&#xFF0C;&#x7CFB;&#x7EDF;&#x5C06;&#x4EE5;&#x670D;&#x52A1;&#x7684;&#x65B9;&#x5F0F;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;</span>
+<span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x6210; false&#xFF0C;&#x7CFB;&#x7EDF;&#x5C06;&#x4EE5;&#x5E94;&#x7528;&#x7684;&#x65B9;&#x5F0F;&#x5728;&#x524D;&#x53F0;&#x8FD0;&#x884C;</span>
+<span class="hljs-attr">run_by_daemon</span> = <span class="hljs-literal">true</span>
+
+<span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x6210; true&#xFF0C;&#x5F53;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#x5D29;&#x6E83;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C06;&#x4EA7;&#x751F;core&#x6587;&#x4EF6;</span>
+<span class="hljs-comment"># &#x8BBE;&#x7F6E;&#x6210; false&#xFF0C;&#x5F53;&#x7CFB;&#x7EDF;&#x5F02;&#x5E38;&#x5D29;&#x6E83;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;core&#x6587;&#x4EF6;</span>
+<span class="hljs-attr">max_core_file</span> = <span class="hljs-literal">false</span>
+
+<span class="hljs-comment"># &#x4E09;&#x79CD;&#x65E5;&#x5FD7;&#x7C7B;&#x578B;&#x7684;&#x8F93;&#x51FA;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;</span>
+<span class="hljs-comment"># &#x5982;&#x679C;&#x4E0D;&#x9700;&#x8981;&#x8F93;&#x51FA;&#x5230;&#x6587;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;&#x6210;/dev/null&#xFF0C;&#x5982;&#xFF1A;</span>
+<span class="hljs-comment"># info_log = /dev/null</span>
+<span class="hljs-comment"># &#x5982;&#x679C;&#x9700;&#x8981;&#x89C1;&#x65E5;&#x5FD7;&#x8F93;&#x51FA;&#x5230;&#x63A7;&#x5236;&#x53F0;&#xFF0C;&#x53EF;&#x4EE5;&#x4E0D;&#x8BBE;&#x7F6E;&#x4EFB;&#x4F55;&#x503C;&#xFF0C;&#x5982;&#xFF1A;</span>
+<span class="hljs-comment"># info_log = </span>
+<span class="hljs-attr">info_log</span> = /home/liuxun/FastDCS/demo/info.log
+<span class="hljs-attr">warn_log</span> = /home/liuxun/FastDCS/demo/warn.log
+<span class="hljs-attr">err_log</span>  = /home/liuxun/FastDCS/demo/err.log
+
+<span class="hljs-comment"># &#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x6700;&#x5927;&#x5BB9;&#x91CF;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;10M&#xFF0C;&#x652F;&#x6301;&#x7684;&#x5355;&#x4F4D;&#x5982;&#x4E0B;&#xFF1A;</span>
+<span class="hljs-comment"># G or g for gigabyte(GB)</span>
+<span class="hljs-comment"># M or m for megabyte(MB)</span>
+<span class="hljs-comment"># K or k for kilobyte(KB)</span>
+<span class="hljs-attr">log_max_size</span> = <span class="hljs-number">10</span>MB
+
+<span class="hljs-comment"># &#x6307;&#x5B9A;&#x4EE5;&#x54EA;&#x4E2A;&#x7528;&#x6237;&#x8FD0;&#x884C;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x8BBE;&#x7F6E;&#xFF0C;&#x4EE5;&#x5F53;&#x524D;&#x7528;&#x6237;&#x6267;&#x884C;</span>
+<span class="hljs-comment"># &#x8BE5;&#x8BBE;&#x7F6E;&#x9879;&#x53EA;&#x6709;&#x5728; run_by_daemon = true &#x7684;&#x65F6;&#x5019;&#x624D;&#x6709;&#x6548;</span>
+<span class="hljs-attr">run_by_user</span> = liuxun
+
+<span class="hljs-comment"># &#x4FDD;&#x5B58;PID&#x7684;&#x6587;&#x4EF6;&#x540D;&#x79F0;</span>
+<span class="hljs-attr">pid_file</span> = /tmp/fdcs_master.pid
+
+<span class="hljs-comment"># &#x7CFB;&#x7EDF;&#x652F;&#x6301;&#x7684;&#x6700;&#x5927;&#x8FDE;&#x63A5;&#x6570;&#xFF0C;&#x9ED8;&#x8BA4;&#x503C;256</span>
+<span class="hljs-comment"># &#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x7684;&#x5EFA;&#x8BAE;&#x503C;&#x662F;&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x6240;&#x8FD0;&#x884C;&#x7684;&#x8282;&#x70B9;&#x6570;&#x7684;5&#x500D;</span>
+<span class="hljs-attr">max_connections</span> = <span class="hljs-number">256</span>
+
+<span class="hljs-comment"># &#x7528;&#x4E8E;&#x5206;&#x914D;&#x7ED9;&#x6BCF;&#x4E2A;Socket&#x94FE;&#x63A5;&#x7684;&#x7F13;&#x51B2;&#x533A;&#x5927;&#x5C0F;&#xFF0C;&#x9ED8;&#x8BA4;64KB</span>
+<span class="hljs-comment"># &#x8FD9;&#x4E2A;&#x53C2;&#x6570;&#x5EFA;&#x8BAE;&#x7684;&#x8303;&#x56F4;&#x662F; [8KB, 512KB]</span>
+<span class="hljs-attr">socket_buff_size</span> = <span class="hljs-number">128</span>KB
+
+<span class="hljs-comment"># &#x5728;Master &#x6216; Worker &#x7C7B;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x6D3E;&#x751F;&#x7684;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&#x540D;&#x79F0;</span>
+<span class="hljs-comment"># &#x4F8B;&#x5982;FastDCS&#x63D0;&#x4F9B;&#x7684;demo&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;Master&#x8282;&#x70B9;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x6210; </span>
+<span class="hljs-comment"># class_factory = DictMaster</span>
+<span class="hljs-comment"># &#x4F8B;&#x5982;FastDCS&#x63D0;&#x4F9B;&#x7684;demo&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;Worker&#x8282;&#x70B9;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x6210; </span>
+<span class="hljs-comment"># class_factory = DictWorker</span>
+<span class="hljs-attr">class_factory</span> = <span class="hljs-string">&quot;please input you master class name&quot;</span>
+
+<span class="hljs-comment"># &#x6574;&#x4E2A;master&#x8282;&#x70B9;&#x96C6;&#x7FA4;&#x7684;&#x670D;&#x52A1;&#x5668;IP&#x548C;&#x7AEF;&#x53E3;&#x961F;&#x5217;</span>
+<span class="hljs-comment"># &#x683C;&#x5F0F;&#x4E3A; host1:port1;host2:port2;...</span>
+<span class="hljs-attr">tracker_group</span> = <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">32301</span>;<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">32302</span>;<span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">32303</span>
+
+<span class="hljs-comment"># &#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;IP&#x548C;&#x7AEF;&#x53E3;</span>
+<span class="hljs-attr">tracker_server</span> = <span class="hljs-number">127.0</span>.<span class="hljs-number">0.1</span>:<span class="hljs-number">32301</span>
+
+<span class="hljs-comment"># Socket&#x8FDE;&#x63A5;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x79D2;&#xFF09;</span>
+<span class="hljs-comment"># default value is 30s</span>
+<span class="hljs-attr">connect_timeout</span> = <span class="hljs-number">30</span>
+
+<span class="hljs-comment"># &#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#x8D85;&#x65F6;&#x65F6;&#x95F4;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x79D2;&#xFF09;</span>
+<span class="hljs-comment"># default value is 30s</span>
+<span class="hljs-attr">network_timeout</span> = <span class="hljs-number">60</span>
+
+<span class="hljs-comment"># &#x8282;&#x70B9;&#x53D1;&#x9001;&#x5FC3;&#x8DF3;&#x5305;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x79D2;&#xFF09;</span>
+<span class="hljs-comment"># &#x8BE5;&#x8BBE;&#x7F6E;&#x4E0D;&#x80FD;&#x5C0F;&#x4E8E; lease_timeout &#x7684;&#x8BBE;&#x7F6E;&#x503C;</span>
+<span class="hljs-attr">heart_beat_interval</span> = <span class="hljs-number">30</span>
+
+<span class="hljs-comment"># &#x8282;&#x70B9;&#x72B6;&#x6001;&#x62A5;&#x544A;&#x7684;&#x65F6;&#x95F4;&#x95F4;&#x9694;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x79D2;&#xFF09;</span>
+<span class="hljs-attr">stat_report_interval</span> = <span class="hljs-number">60</span>
+
+<span class="hljs-comment"># &#x6570;&#x636E;&#x526F;&#x672C;&#x6709;&#x6548;&#x671F;&#x65F6;&#x95F4;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x79D2;&#xFF09;</span>
+<span class="hljs-comment"># &#x8BE5;&#x8BBE;&#x7F6E;&#x4E0D;&#x80FD;&#x5927;&#x4E8E; heart_beat_interval &#x7684;&#x8BBE;&#x7F6E;&#x503C;</span>
+<span class="hljs-attr">lease_timeout</span> = <span class="hljs-number">10</span>
+
+<span class="hljs-comment"># Primary master&#x8282;&#x70B9;</span>
+<span class="hljs-comment"># &#x6BCF;&#x6B21;&#x4ECE;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x52A0;&#x8F7D;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x6570;&#x76EE;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x4E2A;&#xFF09;</span>
+<span class="hljs-attr">preload_tasks</span> = <span class="hljs-number">100</span>
+
+<span class="hljs-comment"># Second master&#x8282;&#x70B9;&#x6BCF;&#x6B21;&#x4ECE;Primary master&#x8282;&#x70B9;</span>
+<span class="hljs-comment"># &#x540C;&#x6B65;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x526F;&#x672C;&#x7684;&#x6570;&#x76EE;&#xFF08;&#x5355;&#x4F4D;&#xFF1A;&#x4E2A;&#xFF09;</span>
+<span class="hljs-attr">task_duplicate</span> = <span class="hljs-number">10</span>
+
+<span class="hljs-comment"># Worker&#x8282;&#x70B9;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x8BA1;&#x7B97;&#x7EBF;&#x7A0B;&#x6570;</span>
+<span class="hljs-comment"># &#x4EC5;&#x4F7F;&#x7528;&#x4E0E;Worker&#x8282;&#x70B9;&#x914D;&#x7F6E;</span>
+<span class="hljs-attr">computing_threads</span> = <span class="hljs-number">2</span>
+
+<span class="hljs-comment"># FastDCS&#x81EA;&#x5E26;mysql&#x7684;&#x8BBF;&#x95EE;&#x5C01;&#x88C5;&#x7C7B;&#x7684;&#x914D;&#x7F6E;&#x9879;</span>
+<span class="hljs-comment"># FastDCS&#x81EA;&#x8EAB;&#x8FD0;&#x884C;&#x662F;&#x4E0D;&#x9700;&#x8981;&#x4F9D;&#x8D56;mysql&#x7684;</span>
+<span class="hljs-comment"># &#x5982;&#x679C;&#x4F60;&#x9700;&#x8981;&#x5728;&#x81EA;&#x5B9A;&#x4E49;&#x51FD;&#x6570;&#x4E2D;&#x4F7F;&#x7528;&#x53EF;&#x4EE5;&#x5728;&#x8FD9;&#x91CC;&#x8FDB;&#x884C;&#x914D;&#x7F6E;</span>
+<span class="hljs-attr">mysql_database</span> = FastDCS
+<span class="hljs-attr">mysql_host</span> = localhost
+<span class="hljs-attr">mysql_user</span> = FastDCS
+<span class="hljs-attr">mysql_passwd</span> = fastdcs
+<span class="hljs-attr">mysql_port</span> = <span class="hljs-number">3306</span>
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="FastDCS 开发实例.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: FastDCS-开发实例">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"FastDCS 开发说明","level":"1.4.3","depth":2,"previous":{"title":"FastDCS-开发实例","level":"1.4.2","depth":2,"path":"FastDCS/FastDCS 开发实例.md","ref":"FastDCS/FastDCS 开发实例.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"FastDCS/FastDCS 开发说明.md","mtime":"2018-05-09T03:49:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-11T09:42:06.510Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

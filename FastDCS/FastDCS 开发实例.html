@@ -1,0 +1,856 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>FastDCS-开发实例 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="FastDCS 开发说明.html" />
+    
+    
+    <link rel="prev" href="FastDCS 架构介绍.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Zeppelin
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../zeppelin/zeppelin Note 运行方式.html">
+            
+                <a href="../zeppelin/zeppelin Note 运行方式.html">
+            
+                    
+                    zeppelin Note 运行方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../zeppelin/zeppelin Note 执行过程.html">
+            
+                <a href="../zeppelin/zeppelin Note 执行过程.html">
+            
+                    
+                    zeppelin Note 执行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../zeppelin/zeppelin 中运行 spark streaming kakfa 实时可视化.html">
+            
+                <a href="../zeppelin/zeppelin 中运行 spark streaming kakfa 实时可视化.html">
+            
+                    
+                    zeppelin 中运行 spark streaming kakfa 实时可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Atlas/Apache Atlas 数据治理.html">
+            
+                <a href="../Atlas/Apache Atlas 数据治理.html">
+            
+                    
+                    Apache-Atlas-数据治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="FastDCS-introduction.html">
+            
+                <a href="FastDCS-introduction.html">
+            
+                    
+                    FastDCS-分布式计算系统介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="FastDCS 架构介绍.html">
+            
+                <a href="FastDCS 架构介绍.html">
+            
+                    
+                    FastDCS-架构介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4.2" data-path="FastDCS 开发实例.html">
+            
+                <a href="FastDCS 开发实例.html">
+            
+                    
+                    FastDCS-开发实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="FastDCS 开发说明.html">
+            
+                <a href="FastDCS 开发说明.html">
+            
+                    
+                    FastDCS 开发说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >FastDCS-开发实例</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="fastdcs-&#x5F00;&#x53D1;&#x5B9E;&#x4F8B;">FastDCS &#x5F00;&#x53D1;&#x5B9E;&#x4F8B;</h2>
+<h2 id="21-&#x5355;&#x8BCD;&#x6392;&#x5E8F;&#x5F00;&#x53D1;&#x5B9E;&#x4F8B;">2.1 &#x5355;&#x8BCD;&#x6392;&#x5E8F;&#x5F00;&#x53D1;&#x5B9E;&#x4F8B;</h2>
+<p>&#x5728;FastDCS&#x7684;&#x6E90;&#x4EE3;&#x7801;&#x4E2D;&#x7684;/src/demo/&#x76EE;&#x5F55;&#x4E0B;&#x6709;&#x4E00;&#x4E2A;&#x5B8C;&#x6574;&#x7684;&#x5F00;&#x53D1;&#x6837;&#x4F8B;&#xFF0C;&#x8BE5;&#x6837;&#x4F8B;&#x6F14;&#x793A;&#x4E86;&#x5982;&#x4F55;&#x4F7F;&#x7528;FastDCS&#x5BF9;/src/demo/dict.txt&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x82F1;&#x6587;&#x5355;&#x8BCD;&#x6309;&#x7167;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#xFF0C;&#x8BE5;&#x6837;&#x4F8B;&#x4EC5;&#x7528;&#x4E8E;FastDCS&#x5F00;&#x53D1;&#x8BB2;&#x89E3;&#x5E76;&#x65E0;&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4EF7;&#x503C;&#xFF1B;</p>
+<h3 id="211-&#x5F00;&#x53D1;&#x601D;&#x8DEF;">2.1.1 &#x5F00;&#x53D1;&#x601D;&#x8DEF;</h3>
+<ul>
+<li>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6309;&#x7167;&#x4EFB;&#x52A1;&#x5206;&#x89E3;&#x7684;&#x601D;&#x60F3;&#xFF0C;&#x5C06;dict.txt&#x6587;&#x4EF6;&#x4E2D;&#x6309;&#x7167;&#x4E00;&#x884C;&#xFF08;&#x6216;&#x51E0;&#x884C;&#xFF09;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5355;&#x5143;&#xFF0C;&#x5C06;&#x6574;&#x4E2A;&#x5DE5;&#x4F5C;&#x62C6;&#x5206;&#x6210;N&#x4EFD;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#xFF0C;&#x5C06;&#x6240;&#x6709;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5B58;&#x50A8;&#x5230;&#x4E00;&#x4E2A;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;Demo&#x4E2D;&#x4F7F;&#x7528;&#x4E86;mysql&#x4F5C;&#x4E3A;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#xFF1B;</li>
+<li>&#x4F60;&#x9700;&#x8981;&#x6309;&#x7167;/src/demo/dict.sql&#x6587;&#x4EF6;&#x4E2D;&#x63D0;&#x4F9B;&#x7684;SQL&#x811A;&#x672C;&#xFF0C;&#x5728;mysql&#x4E2D;&#x5EFA;&#x7ACB;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x6BCF;&#x4E2A;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x7684;dict_task&#x8868;&#x4EE5;&#x53CA;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x5355;&#x8BCD;&#x6392;&#x5E8F;&#x7ED3;&#x679C;&#x7684;dict_word&#x8868;&#xFF1B;</li>
+<li>Demo&#x4E2D;&#x63D0;&#x4F9B;&#x4E86;dict_mock&#x7A0B;&#x5E8F;&#x5E2E;&#x52A9;&#x4F60;&#x5C06;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5355;&#x5143;&#x4FDD;&#x5B58;&#x5230;&#x4E86;mysql&#x4E2D;&#x7684;dict_task&#x8868;&#x3002;</li>
+<li>&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5F00;&#x53D1;&#x7BA1;&#x7406;&#x8282;&#x70B9;Master&#x7A0B;&#x5E8F;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5B83;&#x547D;&#x540D;&#x4E3A; <code>DictMaster</code>&#xFF0C;&#x7528;&#x6765;&#x4ECE;dict_task&#x8868;&#x4E2D;&#x83B7;&#x53D6;&#x672A;&#x5904;&#x7406;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5355;&#x5143;&#x5BFC;&#x5165;&#x5230;FastDCS&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x4E2D;&#xFF0C;&#x8FD8;&#x8D1F;&#x8D23;&#x5C06;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x5230;dict_word&#x8868;&#x4E2D;&#xFF1B;</li>
+<li>&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5F00;&#x53D1;&#x5DE5;&#x4F5C;&#x8282;&#x70B9;Worker&#x7A0B;&#x5E8F;&#xFF0C;&#x6211;&#x4EEC;&#x5C06;&#x5B83;&#x547D;&#x540D;&#x4E3A; <code>DictWorker</code>&#xFF0C;&#x7528;&#x6765;&#x63A5;&#x53D7;DictMaster&#x8282;&#x70B9;&#x5206;&#x914D;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5355;&#x5143;&#xFF0C;&#x6839;&#x636E;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5355;&#x5143;&#x7684;ID&#x4ECE;dict_task&#x8868;&#x4E2D;&#x83B7;&#x53D6;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x5B57;&#x5185;&#x5BB9;&#xFF0C;&#x7136;&#x540E;&#x6309;&#x7167;&#x5355;&#x8BCD;&#x8FDB;&#x884C;&#x62C6;&#x5206;&#x8BA1;&#x7B97;&#xFF0C;&#x8BA1;&#x7B97;&#x7684;&#x7ED3;&#x679C;&#x7531;FastDCS&#x81EA;&#x52A8;&#x53D1;&#x9001;&#x7ED9;DictMaster&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x4FDD;&#x5B58;&#xFF1B;</li>
+<li>&#x901A;&#x8FC7;&#x8FD0;&#x884C;&#x4E00;&#x6BB5;&#x65F6;&#x95F4;&#x5B8C;&#x6210;&#x8BA1;&#x7B97;&#x540E;&#xFF0C;dict_word &#x8868;&#x4E2D;&#x5C06;&#x4FDD;&#x5B58;&#x4E86; dict.txt &#x6587;&#x672C;&#x4E2D;&#x6240;&#x6709;&#x5355;&#x8BCD;&#x6392;&#x5E8F;&#x540E;&#x7684;&#x7ED3;&#x679C;&#xFF1B;</li>
+</ul>
+<h3 id="212-dictmaster&#x5F00;&#x53D1;&#x8BF4;&#x660E;">2.1.2 DictMaster&#x5F00;&#x53D1;&#x8BF4;&#x660E;</h3>
+<pre><code class="lang-c++"><span class="hljs-comment">// 1.&#x5C06;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&apos;DictMaster&apos;&#x6D3E;&#x751F;&#x5728;&apos;Master&apos;&#x4E4B;&#x4E0A;</span>
+<span class="hljs-keyword">class</span> DictMaster : <span class="hljs-keyword">public</span> Master {
+  <span class="hljs-keyword">public</span>:
+  <span class="hljs-comment">// 2.Master&#x8282;&#x70B9;&#x7A0B;&#x5E8F;&#x542F;&#x52A8;&#x540E;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;</span>
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">InitialTracker</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> settings_s settings)</span> </span>{
+    <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF; mysql_connect_&#xFF0C;&#x8FDE;&#x63A5;mysql&#x6570;&#x636E;&#x5E93;</span>
+    mysql_connect_.Connect(settings.mysql_database, 
+                             settings.mysql_host, 
+                             settings.mysql_user, 
+                             settings.mysql_passwd, 
+                             settings.mysql_port);
+
+    <span class="hljs-comment">// &#x5FC5;&#x987B;&#x8C03;&#x7528;&#x57FA;&#x7C7B;&#x4E2D;&#x7684;InitialTracker&#x51FD;&#x6570;&#xFF0C;&#x521D;&#x59CB;&#x5316;Master&#x7C7B;</span>
+    Master::InitialTracker(settings);
+  };
+
+  <span class="hljs-comment">// 3.Master&#x8282;&#x70B9;&#x7A0B;&#x5E8F;&#x9000;&#x51FA;&#x65F6;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;</span>
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">FinalizeTracker</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// &#x7531;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF; mysql_connect_ &#x662F;&#x81EA;&#x52A8;&#x91CA;&#x653E;&#x8D44;&#x6E90;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6CA1;&#x6709;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x9700;&#x8981;&#x5728;&#x8FD9;&#x91CC;&#x91CA;&#x653E;</span>
+
+    <span class="hljs-comment">// &#x5FC5;&#x987B;&#x8C03;&#x7528;&#x57FA;&#x7C7B;&#x4E2D;&#x7684;FinalizeTracker&#x51FD;&#x6570;&#xFF0C;&#x91CA;&#x653E;Master&#x7C7B;</span>
+    Master::FinalizeTracker();
+  };
+
+  <span class="hljs-comment">// 4.FastDCS&#x7A7A;&#x95F2;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x4E3B;&#x52A8;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x65B0;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5BFC;&#x5165;&#x5230;&#x670D;&#x52A1;&#x96C6;&#x7FA4;</span>
+  <span class="hljs-comment">// &#x8BE5;&#x65B9;&#x6CD5;&#x53EA;&#x4F1A;&#x7531;&#x9009;&#x4E3E;&#x4E3A;&apos;Primary master&apos;&#x7684;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x8C03;&#x7528;</span>
+  <span class="hljs-comment">// &#x5F00;&#x53D1;&#x601D;&#x8DEF;&#xFF1A;&#x6279;&#x91CF;&#x83B7;&#x53D6;&apos;dict_task&apos;&#x8868;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;&#x72B6;&#x6001;&#x5B57;&#x6BB5;&apos;task_status&apos;&#x7B49;&#x4E8E;&apos;1&apos;&#x672A;&#x5904;&#x7406;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;</span>
+  <span class="hljs-comment">// &#x5C06;&#x5B83;&#x4EEC;&#x5BFC;&#x5165;&#x5230;FastDCS&#xFF0C;&#x540C;&#x65F6;&#x5C06;&#x8FD9;&#x6279;&#x6570;&#x636E;&#x7684;&#x4EFB;&#x52A1;&#x72B6;&#x6001;&#x5B57;&#x6BB5;&apos;task_status&apos;&#x8BBE;&#x7F6E;&#x4E3A;&apos;2&apos;(&#x5DF2;&#x5904;&#x7406;)</span>
+  <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">ImportTaskUDF</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;FdcsTask&gt; &amp;tasks)</span> </span>{
+    LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;DictMaster::ImportTaskUDF()&quot;</span>;
+
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> select_sql, update_sql, update_where;
+    update_sql = <span class="hljs-string">&quot;UPDATE dict_task SET task_status = 2 WHERE &quot;</span>;
+
+    <span class="hljs-comment">// &#x6839;&#x636E;&#x914D;&#x7F6E;&#x6587;&#x4EF6;master.conf&#x4E2D;&#x7684;&apos;preload_tasks&apos;&#x6240;&#x914D;&#x7F6E;&#x7684;&#x53C2;&#x6570;&#x6279;&#x91CF;&#x83B7;&#x53D6; </span>
+    <span class="hljs-comment">// task_status&#x7B49;&#x4E8E;&apos;1&apos;&#xFF08;&#x672A;&#x5904;&#x7406;&#xFF09;&#x7684;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> format = <span class="hljs-string">&quot;SELECT task_id FROM dict_task WHERE task_status = 1 LIMIT %d;&quot;</span>;
+    SStringPrintf(&amp;select_sql, format.data(), fdcs_env_.PreloadTasks());
+    LOG(INFO) &lt;&lt; select_sql;
+
+    <span class="hljs-function">MysqlQuery <span class="hljs-title">query</span><span class="hljs-params">(&amp;mysql_connect_)</span></span>;
+    <span class="hljs-keyword">if</span> (!query.Execute(select_sql.data())) {
+      LOG(ERROR) &lt;&lt; <span class="hljs-string">&quot;select task from mysql failduer!&quot;</span>;
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+
+    MysqlResult *sql_result = query.Store();
+    <span class="hljs-keyword">int</span> rows_size = sql_result-&gt;RowsSize();
+    LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;sql_result-&gt;RowsSize() = &quot;</span> &lt;&lt; sql_result-&gt;RowsSize();
+    <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span> == rows_size) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5230;&#x65B0;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x540E;&#xFF0C;&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x91CD;&#x590D;&#x5904;&#x7406;</span>
+    <span class="hljs-comment">// &#x5C06;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x672C;&#x6B21;&#x83B7;&#x53D6;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x7684;&apos;task_status&apos;&#x8BBE;&#x7F6E;&#x4E3A;&apos;2&apos;&#xFF08;&#x6B63;&#x5728;&#x5904;&#x7406;&#x72B6;&#x6001;&#xFF09;</span>
+    FdcsTask task;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; rows_size; ++i) {
+      MysqlRow row = sql_result-&gt;FetchRow();
+
+      <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> task_id = (<span class="hljs-keyword">char</span>*)row[<span class="hljs-number">0</span>];
+      LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;task_id = &quot;</span> &lt;&lt; task_id;
+      task.set_task_id(task_id);
+      tasks.push_back(task);
+
+      <span class="hljs-keyword">if</span> (update_where.empty()) {
+        update_where = <span class="hljs-string">&quot;task_id = &apos;&quot;</span> + task_id + <span class="hljs-string">&quot;&apos;&quot;</span>;
+      } <span class="hljs-keyword">else</span> {
+        update_where = update_where + <span class="hljs-string">&quot; or task_id = &apos;&quot;</span> + task_id + <span class="hljs-string">&quot;&apos;&quot;</span>;
+      }
+    }
+    query.FreeResult(sql_result);
+
+    update_sql = update_sql + update_where + <span class="hljs-string">&quot;;&quot;</span>;
+
+    <span class="hljs-comment">// &#x6267;&#x884C;&#x66F4;&#x65B0;task_status&#x72B6;&#x6001;&#x7684;SQL&#x8BED;&#x53E5;</span>
+    <span class="hljs-keyword">if</span> (!query.TryExecute(update_sql.data())) {
+      LOG(ERROR) &lt;&lt; <span class="hljs-string">&quot;update task status faildure!&quot;</span>;
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  };
+
+  <span class="hljs-comment">// 5.FastDCS&#x4F1A;&#x4E3B;&#x52A8;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5C06;&#x4EFB;&#x52A1;&#x7684;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x5BFC;&#x51FA;&#x5230;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;</span>
+  <span class="hljs-comment">// &#x8BE5;&#x65B9;&#x6CD5;&#x53EA;&#x4F1A;&#x7531;&#x9009;&#x4E3E;&#x4E3A;&apos;Primary master&apos;&#x7684;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x8C03;&#x7528;</span>
+  <span class="hljs-comment">// &#x5F00;&#x53D1;&#x601D;&#x8DEF;&#xFF1A;&#x6839;&#x636E;FastDCS&#x5BFC;&#x51FA;&#x7684;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#xFF0C;&#x5C06;&#x5355;&#x8BCD;&#x8F6C;&#x6362;&#x6210;hash&#x7801;&#x4F5C;&#x4E3A;&#x552F;&#x4E00;&#x6807;&#x793A;&#xFF0C;&#x5C06;&#x7ED3;&#x679C;&#x8FDB;&#x884C;&#x4FDD;&#x5B58;</span>
+  <span class="hljs-comment">// &#x5982;&#x679C;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x8BE5;&#x5355;&#x8BCD;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x7684;hash&#x7801;&#xFF0C;&#x5219;&#x8FDB;&#x884C;&#x7D2F;&#x52A0;&#x5904;&#x7406;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x4FDD;&#x5B58;&#x5904;&#x7406;</span>
+  <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">ExportTaskUDF</span><span class="hljs-params">(<span class="hljs-built_in">vector</span>&lt;FdcsTask&gt; tasks)</span> </span>{
+    <span class="hljs-comment">// &#x53D8;&#x91CF;tasks&#x4E2D;&#x4FDD;&#x5B58;&#x4E86;&#x6570;&#x636E;&#x7ED3;&#x6784;FdcsTask&#x7684;&#x6570;&#x7EC4;&#xFF0C;&#x53D8;&#x91CF;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7C7B;&#x4F3C;&#x4E8E;</span>
+    <span class="hljs-comment">// tasks = {[</span>
+    <span class="hljs-comment">//   FdcsTask = {task_id=id1, key_values_pairs=[{&#x5355;&#x8BCD;1,count1},{&#x5355;&#x8BCD;11,count11}, ...]},</span>
+    <span class="hljs-comment">//   FdcsTask = {task_id=id2, key_values_pairs=[{&#x5355;&#x8BCD;2,count2},{&#x5355;&#x8BCD;22,count22}, ...]},</span>
+    <span class="hljs-comment">//   ...</span>
+    <span class="hljs-comment">// ]}</span>
+
+    <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;mysql&#x67E5;&#x8BE2;&#x5BF9;&#x8C61;</span>
+    <span class="hljs-function">MysqlQuery <span class="hljs-title">query</span><span class="hljs-params">(&amp;mysql_connect_)</span></span>;
+
+    <span class="hljs-comment">// &#x5FAA;&#x73AF;&#x83B7;&#x53D6;tasks&#x6570;&#x7EC4;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; tasks.size(); ++i) {
+      <span class="hljs-comment">// &#x6253;&#x5370;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x7684;ID</span>
+      LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;task_id = &quot;</span> &lt;&lt; tasks[i].task_id();
+
+      <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;KeyValuePair&gt; key_values;
+
+      <span class="hljs-comment">// &#x6BCF;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x7684;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x5728;&#x4E00;&#x5BF9;&#x591A;&#x952E;&#x503C;&#x5BF9;&apos;key_values_pairs&apos;&#x53D8;&#x91CF;&#x4E2D;</span>
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> ii = <span class="hljs-number">0</span>; ii &lt; tasks[i].key_values_pairs_size(); ++ii) {
+        <span class="hljs-comment">// key_values_pair &#x4E2D;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7C7B;&#x4F3C;&#x4E8E;</span>
+        <span class="hljs-comment">// FdcsTask = {task_id=id1, key_values_pairs=[{&#x5355;&#x8BCD;1,count1},{&#x5355;&#x8BCD;11,count11}, ...]}</span>
+        KeyValuesPair key_values_pair = tasks[i].key_values_pairs(ii);
+
+        <span class="hljs-comment">// &#x901A;&#x8FC7;&apos;ReadRecord&apos;&#x51FD;&#x6570;&#x5C06;&apos;key_values_pairs&apos;&#x53D8;&#x91CF;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x8BFB;&#x53D6;&#x5230;&#x4E00;&#x5BF9;&#x4E00;&#x952E;&#x503C;&#x5BF9;&apos;key_values&apos;&#x6570;&#x7EC4;&#x4E2D;</span>
+        ReadRecord(&amp;key_values_pair, &amp;key_values);
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> iii = <span class="hljs-number">0</span>; iii &lt; key_values.size(); ++iii) {
+          <span class="hljs-comment">// &#x6BCF;&#x4E00;&#x4E2A;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x7ED3;&#x679C;&#x4E2D;&#x901A;&#x8FC7;&#x952E;&#x503C;&#x5BF9;&#x4FDD;&#x5B58;&#x4E86;&#x5F53;&#x524D;&#x4EFB;&#x52A1;&#x7684;</span>
+          <span class="hljs-comment">// &#x6BCF;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x7684;&#x540D;&#x79F0;&#x548C;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;</span>
+          <span class="hljs-comment">// &#x6570;&#x636E;&#x7ED3;&#x679C;&#x7C7B;&#x4F3C;[key=&#x5355;&#x8BCD;1, value=count1]</span>
+          <span class="hljs-built_in">string</span> word = key_values[iii].key();
+          word = StringReplace(word, <span class="hljs-string">&quot;\&quot;&quot;</span>, <span class="hljs-string">&quot;\\\&quot;&quot;</span>);
+          word = StringReplace(word, <span class="hljs-string">&quot;&apos;&quot;</span>, <span class="hljs-string">&quot;\\\&apos;&quot;</span>);
+          <span class="hljs-keyword">int</span> count = KeyToInt32(key_values[iii].value());
+
+          <span class="hljs-comment">// &#x5C06;&#x5355;&#x8BCD;&#x8F6C;&#x6362;&#x6210;Hash&#x7F16;&#x7801;</span>
+          uint32 word_id = BKDRHash(word);
+
+          <span class="hljs-comment">// &#x67E5;&#x627E;&apos;dict_word&apos;&#x8868;&#x4E2D;&#x5DF2;&#x6709;&#x7684;&#x6570;&#x636E;&#x4E2D;&#x662F;&#x5426;&#x5B58;&#x5728;&#x8BE5;&#x5355;&#x8BCD;&#xFF0C;</span>
+          <span class="hljs-comment">// &#x5982;&#x679C;&#x6709;&#x8FDB;&#x884C;&#x7D2F;&#x52A0;&#x5904;&#x7406;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x4FDD;&#x5B58;</span>
+          <span class="hljs-built_in">string</span> select_sql;
+          SStringPrintf(&amp;select_sql, 
+            <span class="hljs-string">&quot;SELECT count FROM dict_word WHERE word_id = %lu;&quot;</span>, word_id);        
+          MysqlResult *sql_result = <span class="hljs-literal">NULL</span>;
+          <span class="hljs-keyword">if</span> (!query.Execute(select_sql.data())) {
+            LOG(ERROR) &lt;&lt; <span class="hljs-string">&quot;SELECT count FROM dict_word faildure!&quot;</span>;
+            <span class="hljs-keyword">continue</span>;
+          }
+          sql_result = query.Store();
+
+          <span class="hljs-keyword">int</span> old_count = <span class="hljs-number">0</span>;
+          <span class="hljs-keyword">if</span> (sql_result-&gt;RowsSize() &gt; <span class="hljs-number">0</span>) {
+            MysqlRow row = sql_result-&gt;FetchRow();
+            old_count = (<span class="hljs-keyword">int</span>)row[<span class="hljs-number">0</span>];
+          }
+          query.FreeResult(sql_result);
+
+          <span class="hljs-comment">// &#x62FC;&#x88C5;SQL&#x8BED;&#x53E5;&#xFF0C;&#x5982;&#x679C; dict_word &#x8868;&#x4E2D;&#x5DF2;&#x5B58;&#x5728;&#x8BE5;&#x5355;&#x8BCD;&#x5219;&#x8FDB;&#x884C;&#x7D2F;&#x52A0;&#x5904;&#x7406;&#xFF0C;&#x5426;&#x5219;&#x76F4;&#x63A5;&#x8FDB;&#x884C;&#x4FDD;&#x5B58;</span>
+          <span class="hljs-built_in">string</span> insert_sql;
+          <span class="hljs-keyword">if</span> (<span class="hljs-number">0</span> == old_count) {
+            insert_sql = StringPrintf(<span class="hljs-string">&quot;INSERT INTO dict_word \
+              (word_id, word, count, create_time) VALUES (%lu, &apos;%s&apos;, %d, now())&quot;</span>, \
+              word_id, word.data(), count);
+          } <span class="hljs-keyword">else</span> {
+            insert_sql = StringPrintf(<span class="hljs-string">&quot;UPDATE dict_word SET count = %d, \
+              update_time = now() WHERE word_id = %lu&quot;</span>, \
+              old_count + count, word_id);
+          }
+          <span class="hljs-keyword">if</span> ((old_count + count) &lt; <span class="hljs-number">0</span> || old_count &lt; <span class="hljs-number">0</span> || count &lt; <span class="hljs-number">0</span>) {
+            LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;old_count = &quot;</span> &lt;&lt; old_count;
+            LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;count = &quot;</span> &lt;&lt; count;
+            LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;key_values[iii] = &quot;</span> &lt;&lt; key_values[iii].value();
+            LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;insert_sql = &quot;</span> &lt;&lt; insert_sql;
+            <span class="hljs-keyword">continue</span>;
+          }
+
+          <span class="hljs-comment">// &#x6267;&#x884C;SQL&#x8BED;&#x53E5;</span>
+          <span class="hljs-keyword">if</span> (!query.TryExecute(insert_sql.data())) {
+            LOG(ERROR) &lt;&lt; <span class="hljs-string">&quot;INSERT dict_word[&quot;</span> &lt;&lt; word_id 
+                       &lt;&lt; <span class="hljs-string">&quot;, word = &quot;</span> &lt;&lt; word &lt;&lt; <span class="hljs-string">&quot;] faildure!&quot;</span>;
+            <span class="hljs-keyword">continue</span>;
+          }
+        }
+      }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  };
+
+<span class="hljs-keyword">private</span>:
+  <span class="hljs-comment">// &#x4F7F;&#x7528;FastDCS&#x63D0;&#x4F9B;&#x7684;mysql&#x5C01;&#x88C5;&#x7C7B;</span>
+  MysqlConnection mysql_connect_;
+};
+<span class="hljs-comment">// 6.&#x6CE8;&#x518C;&#x5B8F;&#x5FC5;&#x987B;&#x586B;&#x5199;&#x6B63;&#x786E;&#xFF0C;&apos;DictMaster&apos;&#x662F;&#x4F60;&#x81EA;&#x5B9A;&#x4E49;&#x7684;Master&#x7C7B;&#x540D;&#x79F0;</span>
+REGISTER_FASTDCS_TRACKER(DictMaster);
+</code></pre>
+<h3 id="213-dictworker&#x5F00;&#x53D1;&#x8BF4;&#x660E;">2.1.3 DictWorker&#x5F00;&#x53D1;&#x8BF4;&#x660E;</h3>
+<pre><code class="lang-c++"><span class="hljs-comment">// 1.&#x5C06;&#x81EA;&#x5B9A;&#x4E49;&#x7C7B;&apos;DictWorker&apos;&#x6D3E;&#x751F;&#x5728;&apos;Worker&apos;&#x4E4B;&#x4E0A;</span>
+<span class="hljs-keyword">class</span> DictWorker : <span class="hljs-keyword">public</span> Worker {
+  <span class="hljs-keyword">public</span>:
+  <span class="hljs-comment">// 2.Worker&#x8282;&#x70B9;&#x542F;&#x52A8;&#x540E;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;</span>
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">InitialTracker</span><span class="hljs-params">(<span class="hljs-keyword">struct</span> settings_s settings)</span> </span>{
+    <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF; mysql_connect_&#xFF0C;&#x8FDE;&#x63A5;mysql&#x6570;&#x636E;&#x5E93;</span>
+    mysql_connect_.Connect(settings.mysql_database, 
+                            settings.mysql_host, 
+                            settings.mysql_user, 
+                            settings.mysql_passwd, 
+                            settings.mysql_port);
+
+    <span class="hljs-comment">// &#x5FC5;&#x987B;&#x8C03;&#x7528;&#x57FA;&#x7C7B;&#x4E2D;&#x7684;InitialTracker&#x51FD;&#x6570;&#xFF0C;&#x521D;&#x59CB;&#x5316;Worker&#x7C7B;</span>
+    Worker::InitialTracker(settings);
+  }
+
+  <span class="hljs-comment">// 3.Worker&#x8282;&#x70B9;&#x9000;&#x51FA;&#x65F6;&#xFF0C;&#x4F1A;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;</span>
+  <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">FinalizeTracker</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">// &#x7531;&#x4E8E;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF; mysql_connect_ &#x662F;&#x81EA;&#x52A8;&#x91CA;&#x653E;&#x8D44;&#x6E90;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6CA1;&#x6709;&#x81EA;&#x5B9A;&#x4E49;&#x53D8;&#x91CF;&#x9700;&#x8981;&#x5728;&#x8FD9;&#x91CC;&#x91CA;&#x653E;</span>
+
+    <span class="hljs-comment">// &#x5FC5;&#x987B;&#x8C03;&#x7528;&#x57FA;&#x7C7B;&#x4E2D;&#x7684;FinalizeTracker&#x51FD;&#x6570;&#xFF0C;&#x91CA;&#x653E;Worker&#x7C7B;</span>
+    Worker::FinalizeTracker();
+  }
+
+  <span class="hljs-comment">// 4.FastDCS&#x4E2D;&#x6709;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x7684;&#x4EFB;&#x52A1;&#x7684;&#x65F6;&#x5019;&#x4F1A;&#x4E3B;&#x52A8;&#x8C03;&#x7528;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x5F00;&#x53D1;&#x8005;&#x81EA;&#x884C;&#x5B9E;&#x73B0;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x8BA1;&#x7B97;&#x65B9;&#x6CD5;</span>
+  <span class="hljs-comment">// &#x5F00;&#x53D1;&#x601D;&#x8DEF;&#xFF1A;&#x6839;&#x636E;FastDCS&#x5206;&#x53D1;&#x7684; task &#x6570;&#x636E;&#x4E2D;&#x7684;&#x4EFB;&#x52A1;ID&#xFF0C;&#x4ECE;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x4E2D;&#x83B7;&#x53D6;&#x8BE5;&#x4EFB;&#x52A1;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x672C;</span>
+  <span class="hljs-comment">// &#x5C06;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x6839;&#x636E;&#x5355;&#x8BCD;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x683C;&#x8FDB;&#x884C;&#x62C6;&#x5206;&#xFF0C;&#x5E76;&#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x5728;&#x8BE5;&#x4EFB;&#x52A1;&#x7684;&#x6587;&#x672C;&#x4E2D;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;</span>
+  <span class="hljs-comment">// &#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x5B8C;&#x6210;&#x540E;&#xFF0C;FastDCS&#x4F1A;&#x81EA;&#x52A8;&#x5C06;&#x8FD9;&#x4E2A;&#x4EFB;&#x52A1;&#x5206;&#x53D1;&#x7ED9; DictMaster &#x8282;&#x70B9;&#xFF0C;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x66F4;&#x65B0;</span>
+  <span class="hljs-function"><span class="hljs-keyword">bool</span> <span class="hljs-title">ComputingUDF</span><span class="hljs-params">(FdcsTask &amp;task)</span> </span>{
+    <span class="hljs-comment">// task &#x662F;&#x7531; DictMaster &#x5206;&#x53D1;&#x7ED9; DictWorker &#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#xFF0C;task &#x4E2D;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x7C7B;&#x4F3C; :</span>
+    <span class="hljs-comment">// task = {task_id=id1, key_values_pairs=[{&#x5355;&#x8BCD;1,count1},{&#x5355;&#x8BCD;11,count11}, ...]}</span>
+
+    <span class="hljs-comment">// &#x6839;&#x636E;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;ID&#x4ECE;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;mysql&#x4E2D;&#x83B7;&#x53D6;&#x76F8;&#x5E94;&#x7684;&#x6587;&#x672C;&#x5185;&#x5BB9;</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> select_sql, text;
+    SStringPrintf(&amp;select_sql, <span class="hljs-string">&quot;SELECT text FROM dict_task WHERE task_id = %s;&quot;</span>, 
+        task.task_id().data());
+    LOG(INFO) &lt;&lt; select_sql;
+
+    <span class="hljs-function">MysqlQuery <span class="hljs-title">query</span><span class="hljs-params">(&amp;mysql_connect_)</span></span>;
+    <span class="hljs-keyword">if</span> (!query.Execute(select_sql.data())) {
+      LOG(ERROR) &lt;&lt; <span class="hljs-string">&quot;select text from mysql failduer!&quot;</span>;
+      <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+    }
+
+    MysqlResult *sql_result = query.Store();
+    LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;sql_result-&gt;RowsSize() = &quot;</span> &lt;&lt; sql_result-&gt;RowsSize();
+    <span class="hljs-keyword">if</span> (sql_result-&gt;RowsSize() &gt; <span class="hljs-number">0</span>) {
+      MysqlRow row = sql_result-&gt;FetchRow();
+
+      text.append((<span class="hljs-keyword">char</span>*)row[<span class="hljs-number">0</span>]);
+    }
+    query.FreeResult(sql_result);
+
+    <span class="hljs-comment">// &#x6839;&#x636E;&#x6587;&#x672C;&#x4E4B;&#x95F4;&#x7684;&#x7A7A;&#x683C;&#xFF0C;&#x62C6;&#x5206;&#x6587;&#x672C;&#xFF0C;&#x5C06;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x548C;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x4FDD;&#x5B58;&#x5230;&apos;word_count&apos;&#x53D8;&#x91CF;&#x4E2D;</span>
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">map</span>&lt;<span class="hljs-built_in">string</span> /*word*/, <span class="hljs-keyword">int</span> /*count*/&gt; word_count;
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span>&gt; words;
+    SplitStringUsing(text, <span class="hljs-string">&quot; &quot;</span>, &amp;words);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; words.size(); ++i) {
+      <span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span> == words[i].empty()) <span class="hljs-keyword">continue</span>;
+
+      <span class="hljs-keyword">if</span> (word_count.end() == word_count.find(words[i])) {
+        word_count[words[i]] = <span class="hljs-number">1</span>;
+      } <span class="hljs-keyword">else</span> {
+        word_count[words[i]] = word_count[words[i]] + <span class="hljs-number">1</span>;    
+      }
+    }
+
+    <span class="hljs-comment">// &#x5C06;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x548C;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x4FDD;&#x5B58;&#x5230;&apos;task&apos;&#x4E2D;&#x7684;&#x4E00;&#x5BF9;&#x591A;&#x952E;&#x503C;&#x5BF9;&apos;KeyValuePair&apos;&#x53D8;&#x91CF;&#x4E2D;</span>
+    KeyValuesPair *key_values_pair = task.add_key_values_pairs();
+    <span class="hljs-keyword">for</span> (WordCountIter it = word_count.begin(); it != word_count.end(); ++it) {
+      <span class="hljs-comment">// &#x5C06;&#x6BCF;&#x4E2A;&#x5355;&#x8BCD;&#x548C;&#x51FA;&#x73B0;&#x7684;&#x6B21;&#x6570;&#x4FDD;&#x5B58;&#x5230;&#x4E00;&#x5BF9;&#x4E00;&#x952E;&#x503C;&#x5BF9;&apos;key_value&apos;&#x4E2D;</span>
+      KeyValuePair key_value;
+      key_value.set_key(it-&gt;first);
+      <span class="hljs-built_in">string</span> count = Int32ToKey(it-&gt;second);
+      <span class="hljs-keyword">if</span> (<span class="hljs-literal">true</span> == count.empty() || it-&gt;second &lt; <span class="hljs-number">0</span> || KeyToInt32(count) &lt; <span class="hljs-number">0</span>) {
+        LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;it&quot;</span> &lt;&lt; it-&gt;first &lt;&lt; <span class="hljs-string">&quot;, &quot;</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="hljs-string">&quot;, &quot;</span> &lt;&lt; KeyToInt32(count);
+        <span class="hljs-built_in">abort</span>();
+      }
+      key_value.set_value(count);
+
+      <span class="hljs-comment">// &#x5C06; key_value &#x53D8;&#x91CF;&#x4FDD;&#x5B58;&#x5230;&apos;task&apos;&#x4E2D;&#x7684;&#x4E00;&#x5BF9;&#x591A;&#x952E;&#x503C;&#x5BF9;&apos;KeyValuePair&apos;&#x53D8;&#x91CF;&#x4E2D;</span>
+      WriteRecord(key_values_pair, key_value);
+    }
+
+    <span class="hljs-comment">// &#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4F11;&#x7720;5&#x79D2;&#xFF0C;&#x6765;&#x6A21;&#x62DF;&#x8F83;&#x590D;&#x6742;&#x7684;&#x8BA1;&#x7B97;</span>
+    <span class="hljs-comment">// sleep(5);</span>
+
+    <span class="hljs-comment">// &apos;task&apos;&#x53D8;&#x91CF;&#x5DF2;&#x7ECF;&#x4FDD;&#x5B58;&#x4E86;&#x4F60;&#x7684;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#xFF0C;&#x51C6;&#x5907;&#x53D1;&#x9001;&#x5230;&apos;DictMaster&apos;&#x8282;&#x70B9;&#x4E2D;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;
+  }
+<span class="hljs-keyword">private</span>:
+  <span class="hljs-comment">// &#x4F7F;&#x7528;FastDCS&#x63D0;&#x4F9B;&#x7684;mysql&#x5C01;&#x88C5;&#x7C7B;</span>
+  MysqlConnection mysql_connect_;
+
+  <span class="hljs-keyword">typedef</span> <span class="hljs-built_in">std</span>::<span class="hljs-built_in">map</span>&lt;<span class="hljs-built_in">string</span> /*word*/, <span class="hljs-keyword">int</span> /*count*/&gt;::iterator WordCountIter;
+};
+<span class="hljs-comment">// 5.&#x6CE8;&#x518C;&#x5B8F;&#x5FC5;&#x987B;&#x586B;&#x5199;&#x6B63;&#x786E;&#xFF0C;&apos;DictWorker&apos;&#x662F;&#x4F60;&#x81EA;&#x5B9A;&#x4E49;&#x7684;Worker&#x7C7B;&#x540D;&#x79F0;</span>
+REGISTER_FASTDCS_TRACKER(DictWorker);
+</code></pre>
+<h3 id="214-dictmock&#x5F00;&#x53D1;&#x8BF4;&#x660E;">2.1.4 DictMock&#x5F00;&#x53D1;&#x8BF4;&#x660E;</h3>
+<pre><code class="lang-c++"><span class="hljs-comment">// &#x521B;&#x5EFA;&#x5F00;&#x53D1;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x8868;&#x7ED3;&#x6784;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">CreateDictTable</span><span class="hljs-params">()</span></span>;
+<span class="hljs-comment">// &#x5C06;dict.txt&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x62C6;&#x5206;&#x6210;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x4FDD;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">CreateDictData</span><span class="hljs-params">()</span></span>;
+<span class="hljs-comment">// &#x6E05;&#x7A7A;&#x5F00;&#x53D1;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x8868;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">TruncateDictData</span><span class="hljs-params">()</span></span>;
+<span class="hljs-comment">// &#x6E05;&#x9664;&#x5F00;&#x53D1;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x8868;&#x7ED3;&#x6784;&#x548C;&#x6570;&#x636E;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">DropDictTable</span><span class="hljs-params">()</span></span>;
+
+<span class="hljs-comment">// &#x4F7F;&#x7528;FastDCS&#x63D0;&#x4F9B;&#x7684;mysql&#x5C01;&#x88C5;&#x7C7B;</span>
+MysqlConnection connection;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">(<span class="hljs-keyword">int</span> argc, <span class="hljs-keyword">char</span> <span class="hljs-keyword">const</span> *argv[])</span> </span>{
+  <span class="hljs-comment">// &#x4F60;&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x6570;&#x636E;&#x5E93;&#x540D;&#x79F0;&#x3001;&#x670D;&#x52A1;IP&#x3001;&#x7528;&#x6237;&#x540D;&#x3001;&#x7528;&#x6237;&#x5BC6;&#x7801;&#x548C;&#x6570;&#x636E;&#x5E93;&#x7AEF;&#x53E3;&#x8FDE;&#x63A5;&#x4F60;&#x7684;mysql&#x6570;&#x636E;&#x5E93;</span>
+  <span class="hljs-keyword">bool</span> conn = connection.Connect(<span class="hljs-string">&quot;FastDCS&quot;</span>, <span class="hljs-string">&quot;localhost&quot;</span>, <span class="hljs-string">&quot;FastDCS&quot;</span>, <span class="hljs-string">&quot;fastdcs&quot;</span>, <span class="hljs-number">3306</span>);
+  <span class="hljs-keyword">if</span> (!conn)
+  LOG(ERROR) &lt;&lt; <span class="hljs-string">&quot;connect mysql faildure!&quot;</span>;
+
+  <span class="hljs-comment">// &#x63A5;&#x53D7;&#x7528;&#x6237;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x8FDB;&#x884C;&#x76F8;&#x5173;&#x7684;&#x64CD;&#x4F5C;</span>
+  <span class="hljs-keyword">char</span> cmd[<span class="hljs-number">20</span>];
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;----- 0:quit&#xFF01;       -----\n&quot;</span>);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;----- 1:create dict table  -----\n&quot;</span>);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;----- 2:create dict data   -----\n&quot;</span>);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;----- 3:truncate dict data -----\n&quot;</span>);
+  <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;----- 4:drop dict table  -----\n&quot;</span>);
+
+  <span class="hljs-keyword">while</span> (<span class="hljs-built_in">strncmp</span>(<span class="hljs-string">&quot;0&quot;</span>, cmd, <span class="hljs-number">1</span>) != <span class="hljs-number">0</span>) {
+  fgets(cmd, <span class="hljs-number">20</span>, <span class="hljs-built_in">stdin</span>);
+  <span class="hljs-keyword">if</span> (<span class="hljs-built_in">strncmp</span>(<span class="hljs-string">&quot;1&quot;</span>, cmd, <span class="hljs-number">1</span>) == <span class="hljs-number">0</span>) {
+    CreateDictTable();
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">strncmp</span>(<span class="hljs-string">&quot;2&quot;</span>, cmd, <span class="hljs-number">1</span>) == <span class="hljs-number">0</span>) {
+    CreateDictData();
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">strncmp</span>(<span class="hljs-string">&quot;3&quot;</span>, cmd, <span class="hljs-number">1</span>) == <span class="hljs-number">0</span>) {
+    TruncateDictData();
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">strncmp</span>(<span class="hljs-string">&quot;4&quot;</span>, cmd, <span class="hljs-number">1</span>) == <span class="hljs-number">0</span>) {
+    DropDictTable();
+  }
+  }
+
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+
+<span class="hljs-comment">// &#x521B;&#x5EFA;&#x5F00;&#x53D1;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x8868;&#x7ED3;&#x6784;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">CreateDictTable</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-function">MysqlQuery <span class="hljs-title">query</span><span class="hljs-params">(&amp;connection)</span></span>;
+  <span class="hljs-keyword">if</span> (!query.Execute(<span class="hljs-string">&quot;SELECT * FROM dict_task;&quot;</span>)) {
+  query.Execute(<span class="hljs-string">&quot;CREATE TABLE dict_task (                 \
+                task_id VARCHAR(32) NOT NULL PRIMARY KEY, \
+                task_status INTEGER default 0,            \
+                text VARCHAR(20480),                      \
+                create_time DATETIME,                     \
+                update_time DATETIME                      \
+              )ENGINE=InnoDB DEFAULT CHARSET=utf8;&quot;</span>);
+  }
+  LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;CREATE TABLE dict_task&quot;</span>;
+
+  <span class="hljs-keyword">if</span> (!query.Execute(<span class="hljs-string">&quot;SELECT * FROM dict_word;&quot;</span>)) {
+  query.Execute(<span class="hljs-string">&quot;CREATE TABLE dict_word (                      \
+                word_id INTEGER UNSIGNED NOT NULL PRIMARY KEY, \
+                word VARCHAR(256) NOT NULL,                    \
+                count INTEGER default 0,                       \
+                create_time DATETIME,                          \
+                update_time DATETIME                           \
+              )ENGINE=InnoDB DEFAULT CHARSET=utf8;&quot;</span>);
+  }
+  LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;CREATE TABLE dict_word&quot;</span>;
+}
+
+<span class="hljs-comment">// &#x6E05;&#x9664;&#x5F00;&#x53D1;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x8868;&#x7ED3;&#x6784;&#x548C;&#x6570;&#x636E;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">DropDictTable</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-function">MysqlQuery <span class="hljs-title">query</span><span class="hljs-params">(&amp;connection)</span></span>;
+  <span class="hljs-keyword">if</span> (!query.TryExecute(<span class="hljs-string">&quot;DROP TABLE dict_task;&quot;</span>)) {
+  LOG(ERROR) &lt;&lt; <span class="hljs-string">&quot;DROP TABLE dict_task faildure!&quot;</span>;
+  } <span class="hljs-keyword">else</span> {
+  LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;DROP TABLE dict_task success!&quot;</span>;
+  }
+
+  <span class="hljs-keyword">if</span> (!query.TryExecute(<span class="hljs-string">&quot;DROP TABLE dict_word;&quot;</span>)) {
+  LOG(ERROR) &lt;&lt; <span class="hljs-string">&quot;DROP TABLE dict_word faildure!&quot;</span>;
+  } <span class="hljs-keyword">else</span> {
+  LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;DROP TABLE dict_word success!&quot;</span>;
+  }
+}
+
+<span class="hljs-comment">// &#x5C06;dict.txt&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x62C6;&#x5206;&#x6210;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x4FDD;&#x5B58;&#x5230;&#x6570;&#x636E;&#x5E93;&#x4E2D;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">CreateDictData</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-keyword">float</span> time_use = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">struct</span> timeval start, end;
+
+  gettimeofday(&amp;start, <span class="hljs-literal">NULL</span>);
+  LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;start.tv_sec:&quot;</span> &lt;&lt; start.tv_sec;
+  LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;start.tv_usec:&quot;</span> &lt;&lt; start.tv_usec;
+
+  FILE* file = <span class="hljs-literal">NULL</span>;
+  <span class="hljs-keyword">char</span>* line = <span class="hljs-literal">NULL</span>;
+  <span class="hljs-keyword">size_t</span> len = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">size_t</span> read;
+
+  file = fopen(<span class="hljs-string">&quot;dict.txt&quot;</span>, <span class="hljs-string">&quot;r&quot;</span>);
+  CHECK(file);
+
+  <span class="hljs-keyword">int32_t</span> count = <span class="hljs-number">1</span>;
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> sql, line_text;
+
+  <span class="hljs-function">MysqlQuery <span class="hljs-title">query</span><span class="hljs-params">(&amp;connection)</span></span>;
+  <span class="hljs-keyword">while</span> ((read = getline(&amp;line, &amp;len, file)) != <span class="hljs-number">-1</span>) {
+    line_text = line;
+    line_text = StringReplace(line_text, <span class="hljs-string">&quot;\&quot;&quot;</span>, <span class="hljs-string">&quot;\\\&quot;&quot;</span>);
+    line_text = StringReplace(line_text, <span class="hljs-string">&quot;&apos;&quot;</span>, <span class="hljs-string">&quot;\\\&apos;&quot;</span>);
+
+    sql = <span class="hljs-string">&quot;INSERT INTO dict_task(task_id, task_status, text, create_time) VALUES (&apos;&quot;</span>;
+    sql += Int32ToKey(count);
+    sql += <span class="hljs-string">&quot;&apos; , 1, &apos;&quot;</span>;
+    sql += line_text;
+    sql += <span class="hljs-string">&quot;&apos;, now())&quot;</span>;
+
+    <span class="hljs-keyword">if</span> (!query.TryExecute(sql.data())) {
+    LOG(ERROR) &lt;&lt; <span class="hljs-string">&quot;INSERT INTO dict_task[&quot;</span> &lt;&lt; count &lt;&lt; <span class="hljs-string">&quot;] faildure!&quot;</span>;
+    fclose(file);
+    <span class="hljs-keyword">return</span>;
+    }
+    count ++;
+  }
+  LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;file line count = &quot;</span> &lt;&lt; count;
+  <span class="hljs-keyword">if</span> (line)
+    <span class="hljs-built_in">free</span>(line);
+
+  fclose(file);
+
+  gettimeofday(&amp;end, <span class="hljs-literal">NULL</span>);
+  LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;end.tv_sec:&quot;</span> &lt;&lt; end.tv_sec;
+  LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;end.tv_usec:&quot;</span> &lt;&lt; end.tv_usec;
+  time_use = (end.tv_sec-start.tv_sec)*<span class="hljs-number">1000000</span>+(end.tv_usec-start.tv_usec); <span class="hljs-comment">// ms</span>
+  LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;time_use is &quot;</span> &lt;&lt; time_use/<span class="hljs-number">1000000</span> &lt;&lt; <span class="hljs-string">&quot;s&quot;</span>; 
+}
+
+<span class="hljs-comment">// &#x6E05;&#x7A7A;&#x5F00;&#x53D1;&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;&#x8868;&#x4E2D;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">TruncateDictData</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-function">MysqlQuery <span class="hljs-title">query</span><span class="hljs-params">(&amp;connection)</span></span>;
+  <span class="hljs-keyword">if</span> (!query.TryExecute(<span class="hljs-string">&quot;TRUNCATE TABLE dict_task;&quot;</span>)) {
+  LOG(ERROR) &lt;&lt; <span class="hljs-string">&quot;TRUNCATE TABLE dict_task faildure!&quot;</span>;
+  } <span class="hljs-keyword">else</span> {
+  LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;TRUNCATE TABLE dict_task success.&quot;</span>;   
+  }
+
+  <span class="hljs-keyword">if</span> (!query.TryExecute(<span class="hljs-string">&quot;TRUNCATE TABLE dict_word;&quot;</span>)) {
+  LOG(ERROR) &lt;&lt; <span class="hljs-string">&quot;TRUNCATE TABLE dict_word faildure!&quot;</span>;
+  } <span class="hljs-keyword">else</span> {
+  LOG(INFO) &lt;&lt; <span class="hljs-string">&quot;TRUNCATE TABLE dict_word success.&quot;</span>;   
+  }
+}
+
+<span class="hljs-comment">// &#x67E5;&#x770B;&#x5F00;&#x53D1;&#x5B9E;&#x4F8B;&#x6570;&#x636E;&#x7684;&#x4E00;&#x4E9B;&#x5E38;&#x7528;&#x811A;&#x672C;</span>
+<span class="hljs-comment">// SELECT * FROM dict_word order by count desc limit 0, 10;</span>
+<span class="hljs-comment">// SELECT count(1), MAX(count) FROM dict_word;</span>
+<span class="hljs-comment">// SELECT count(1), task_status FROM dict_task GROUP BY task_status;</span>
+</code></pre>
+<h3 id="221-&#x5B9E;&#x4F8B;&#x90E8;&#x7F72;">2.2.1 &#x5B9E;&#x4F8B;&#x90E8;&#x7F72;</h3>
+<ol>
+<li>&#x6309;&#x7167;/src/demo/dict.sql&#x6587;&#x4EF6;&#x4E2D;&#x63D0;&#x4F9B;&#x7684;SQL&#x811A;&#x672C;&#xFF0C;&#x5728;mysql&#x4E2D;&#x5EFA;&#x7ACB;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x6BCF;&#x4E2A;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x7684;dict_task&#x8868;&#x4EE5;&#x53CA;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x5355;&#x8BCD;&#x6392;&#x5E8F;&#x7ED3;&#x679C;&#x7684;dict_word&#x8868;&#xFF1B;</li>
+<li>&#x53C2;&#x7167;&#x300A;1.6.1 &#x7F16;&#x8BD1;&#x548C;&#x5B89;&#x88C5;&#x8BF4;&#x660E;&#x300B;&#x5C06;&#x5355;&#x8BCD;&#x6392;&#x5E8F;&#x5B9E;&#x4F8B;&#x5728;Linux&#x73AF;&#x5883;&#x4E0B;&#x8FDB;&#x884C;&#x7F16;&#x8BD1;&#x548C;&#x5B89;&#x88C5;&#xFF0C;&#x5B9E;&#x4F8B;&#x7A0B;&#x5E8F;&#x5C06;&#x4F1A;&#x5B89;&#x88C5;&#x5230;/home/liuxun/FastDCS/demo&#x4E2D;&#xFF0C;&#x5176;&#x4E2D;liuxun&#x53EF;&#x4EE5;&#x4FEE;&#x6539;&#x6210;&#x4F60;&#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#xFF1B;</li>
+<li>&#x901A;&#x8FC7;&#x8FD0;&#x884C;dict_mock&#x7A0B;&#x5E8F;&#x5C06;dict.txt&#x6587;&#x4EF6;&#x62C6;&#x5206;&#x6210;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#xFF0C;&#x4FDD;&#x5B58;&#x5230;mysql&#x6570;&#x636E;&#x5E93;&#x4E2D;&#xFF1B;</li>
+<li>&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x672C;&#x673A;&#x4E0A;&#x8FD0;&#x884C;&#x591A;&#x4E2A; master &#x548C; worker &#x8282;&#x70B9;&#x7A0B;&#x5E8F;&#x6765;&#x6A21;&#x62DF;&#x4E00;&#x4E2A;FastDCS&#x670D;&#x52A1;&#x96C6;&#x7FA4;&#xFF0C;&#x6216;&#x8005;&#x5C06; master &#x548C; worker &#x8282;&#x70B9;&#x7A0B;&#x5E8F;&#x590D;&#x5236;&#x5230;&#x4E0D;&#x540C;&#x7684;Linux&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF1B;</li>
+<li>&#x5728;&#x7F16;&#x8BD1;&#x5B89;&#x88C5;&#x7684;&#x76EE;&#x5F55;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x8BA9;FastDCS&#x7CFB;&#x7EDF;&#x4EE5;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x65B9;&#x5F0F;&#x8FD0;&#x884C;&#x5E76;&#x5C06;&#x65E5;&#x5FD7;&#x8F93;&#x51FA;&#x5230;&#x63A7;&#x5236;&#x53F0;</li>
+</ol>
+<p><strong>&#x9700;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x914D;&#x7F6E;&#x9879;</strong></p>
+<pre><code class="lang-c++">run_by_daemon = <span class="hljs-literal">false</span>
+max_core_file = <span class="hljs-literal">true</span>
+info_log = 
+warn_log = 
+err_log  = 
+
+<span class="hljs-comment">// &#x670D;&#x52A1;&#x96C6;&#x7FA4;&#x7684;IP&#x5730;&#x5740;&#xFF0C;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4E00;&#x4E2A;&#x6216;&#x8005;&#x591A;&#x4E2A;&#xFF0C;&#x5FC5;&#x987B;&#x548C;&#x4F60;&#x7684;master&#x8282;&#x70B9;&#x7684;tracker_server&#x76F8;&#x5BF9;&#x5E94;</span>
+tracker_group = <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">32301</span>;<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">32302</span>;<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">32303</span>
+
+<span class="hljs-comment">// &#x5F53;&#x524D;&#x8282;&#x70B9;&#x7684;IP&#x5730;&#x5740;&#xFF0C;&#x5982;&#x679C;&#x5728;&#x540C;&#x4E00;&#x53F0;Linux&#x670D;&#x52A1;&#x5668;&#x4E0A;&#x9700;&#x8981;&#x914D;&#x7F6E;&#x4E0D;&#x540C;&#x7684;&#x7AEF;&#x53E3;</span>
+tracker_server = <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">32301</span>
+
+<span class="hljs-comment">// mysql&#x53C2;&#x6570;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x4F60;&#x7684;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x8FDB;&#x884C;&#x914D;&#x7F6E;</span>
+mysql_database = FastDCS
+mysql_host = localhost
+mysql_user = FastDCS
+mysql_passwd = fastdcs
+mysql_port = <span class="hljs-number">3306</span>
+</code></pre>
+<p><strong>&#x4F7F;&#x7528;&#x591A;&#x4E2A;&#x63A7;&#x5236;&#x53F0;&#x5206;&#x522B;&#x8FD0;&#x884C;master&#x548C;worker&#x8282;&#x70B9;&#x7A0B;&#x5E8F;</strong></p>
+<pre><code>$ ./master_32301.sh
+
+$ ./master_32302.sh
+
+$ ./master_32303.sh
+
+$ ./worker.sh
+</code></pre><p>&#x5982;&#x679C;&#x914D;&#x7F6E;&#x6B63;&#x786E;&#xFF0C;&#x5E94;&#x8BE5;&#x5C31;&#x53EF;&#x4EE5;&#x770B;&#x89C1;&#x5176;&#x4E2D;&#x4E00;&#x53F0; master &#x8282;&#x70B9;&#x4E0D;&#x505C;&#x7684;&#x83B7;&#x53D6;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#xFF0C;&#x5206;&#x914D;&#x7ED9;&#x5176;&#x4ED6;&#x7684; master &#x8282;&#x70B9;&#xFF0C;worker &#x8282;&#x70B9;&#x63A5;&#x53D7;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x7684;&#x8C03;&#x5EA6;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;/src/demo/dict.sql&#x4E2D;&#x63D0;&#x4F9B;&#x7684;SQL&#x5DE5;&#x5177;&#x811A;&#x672C;&#x5728;mysql&#x4E2D;&#x67E5;&#x770B;&#x6570;&#x636E;&#x7684;&#x8FD0;&#x884C;&#x60C5;&#x51B5;&#x3002;</p>
+<h2 id="22-&#x5982;&#x4F55;&#x8FDB;&#x884C;&#x5B9E;&#x9645;&#x8FD0;&#x7528;">2.2 &#x5982;&#x4F55;&#x8FDB;&#x884C;&#x5B9E;&#x9645;&#x8FD0;&#x7528;</h2>
+<p>&#x901A;&#x8FC7;&#x5BF9;&#x5355;&#x8BCD;&#x6392;&#x5E8F;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;&#x7684;&#x8BB2;&#x89E3;&#xFF0C;&#x5C06;&#x5206;&#x5E03;&#x5F0F;&#x8BA1;&#x7B97;&#x7CFB;&#x7EDF;FastDCS&#x4E2D;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5206;&#x89E3;&#x3001;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x5BFC;&#x5165;&#x3001;&#x4EFB;&#x52A1;&#x7684;&#x8BA1;&#x7B97;&#x3001;&#x8BA1;&#x7B97;&#x7ED3;&#x679C;&#x4FDD;&#x5B58;&#x5230;&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#x7B49;&#x65B9;&#x9762;&#x8FDB;&#x884C;&#x4E86;&#x9610;&#x8FF0;&#xFF0C;&#x5728;&#x5C06;FastDCS&#x8FD0;&#x7528;&#x4E8E;&#x5B9E;&#x9645;&#x4E1A;&#x52A1;&#x7684;&#x5F00;&#x53D1;&#x4E2D;&#x65F6;&#x548C;&#x5BF9;&#x5355;&#x8BCD;&#x6392;&#x5E8F;&#x5E94;&#x7528;&#x5B9E;&#x4F8B;&#x7684;&#x5F00;&#x53D1;&#x6D41;&#x7A0B;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#xFF0C;&#x6240;&#x9700;&#x8981;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x529F;&#x80FD;&#x6A21;&#x5757;&#x6709;&#x4EE5;&#x4E0B;&#x533A;&#x522B;&#xFF1A;</p>
+<ol>
+<li><code>DictMock</code>&#x7A0B;&#x5E8F;&#x5728;&#x5B9E;&#x9645;&#x8FD0;&#x7528;&#x4E2D;&#x4E00;&#x822C;&#x90FD;&#x662F;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x7684;&#x8F93;&#x5165;&#x6E90;&#xFF0C;&#x53EF;&#x80FD;&#x662F;&#x4E00;&#x4E2A;&#x56FA;&#x5B9A;&#x5927;&#x5C0F;&#x548C;&#x65F6;&#x95F4;&#x957F;&#x5EA6;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x4E00;&#x4E2A;&#x5728;&#x7EBF;&#x4E1A;&#x52A1;&#x6C38;&#x4E0D;&#x505C;&#x606F;&#x8FDB;&#x884C;&#x8F93;&#x5165;&#x7684;&#x6570;&#x636E;&#x6D41;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;2008-2012&#x5E74;&#x745E;&#x8BFB;&#x7F51;&#x6BCF;&#x5929;&#x5927;&#x91CF;&#x7684;&#x7528;&#x6237;&#x4E0A;&#x4F20;&#x7684;&#x6587;&#x4EF6;&#xFF1B;</li>
+<li><code>&#x5916;&#x90E8;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;</code>&#x4E00;&#x822C;&#x5206;&#x4E3A;&#x4E8C;&#x4E2A;&#x90E8;&#x5206;&#xFF0C;&#x4E00;&#x4E2A;&#x662F;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x7684;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5982;&#xFF1A;mysql&#x3001;hbase&#x7B49;&#x3002;&#x53E6;&#x4E00;&#x4E2A;&#x662F;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x8BA1;&#x7B97;&#x6570;&#x636E;&#x7684;&#x5B58;&#x50A8;&#x7CFB;&#x7EDF;&#xFF0C;&#x5982;&#xFF1A;<a href="http://csource.org" target="_blank">FastDFS</a>&#x3001;hdfs&#x7B49;&#xFF1B;</li>
+<li><code>DictMaster</code>&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x8BA1;&#x7B97;&#x4EFB;&#x52A1;&#x7684;&#x5BFC;&#x5165;&#x548C;&#x5BFC;&#x51FA;&#x529F;&#x80FD;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x8FD0;&#x7528;&#x7684;&#x5177;&#x4F53;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x81EA;&#x5B9A;&#x4E49;&#x5F00;&#x53D1;&#xFF1B;</li>
+<li><code>DictWorker</code>&#x7A0B;&#x5E8F;&#x4E2D;&#x7684;&#x8BA1;&#x7B97;&#x529F;&#x80FD;&#x7684;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#xFF0C;&#x9700;&#x8981;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x8FD0;&#x7528;&#x7684;&#x5177;&#x4F53;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x81EA;&#x5B9A;&#x4E49;&#x5F00;&#x53D1;&#xFF1B;</li>
+</ol>
+<h2 id="31-&#x5E94;&#x7528;&#x6848;&#x4F8B;">3.1 &#x5E94;&#x7528;&#x6848;&#x4F8B;</h2>
+<p>2013&#x5E74;FastDCS&#x5E94;&#x7528;&#x4E8E;&#x67D0;&#x57CE;&#x5E02;&#x7684;&#x667A;&#x80FD;&#x4EA4;&#x901A;&#x9879;&#x76EE;&#xFF0C;FastDCS&#x90E8;&#x7F72;&#x5728;14&#x53F0;&#x670D;&#x52A1;&#x5668;&#x4E0A;&#xFF0C;&#x6BCF;&#x65E5;&#x8FDB;&#x884C;400&#x4E07;&#x6B21;&#x7684;&#x4EA4;&#x901A;&#x6570;&#x636E;&#x5904;&#x7406;&#x548C;10&#x4EBF;&#x6570;&#x636E;&#x91CF;&#x7684;&#x5206;&#x6790;&#x5DE5;&#x4F5C;&#xFF1B;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="FastDCS 架构介绍.html" class="navigation navigation-prev " aria-label="Previous page: FastDCS-架构介绍">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="FastDCS 开发说明.html" class="navigation navigation-next " aria-label="Next page: FastDCS 开发说明">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"FastDCS-开发实例","level":"1.4.2","depth":2,"next":{"title":"FastDCS 开发说明","level":"1.4.3","depth":2,"path":"FastDCS/FastDCS 开发说明.md","ref":"FastDCS/FastDCS 开发说明.md","articles":[]},"previous":{"title":"FastDCS-架构介绍","level":"1.4.1","depth":2,"path":"FastDCS/FastDCS 架构介绍.md","ref":"FastDCS/FastDCS 架构介绍.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"FastDCS/FastDCS 开发实例.md","mtime":"2018-05-09T03:50:09.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-11T09:42:06.510Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,460 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>zeppelin 中运行 spark streaming kakfa 实时可视化 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../Atlas/Apache Atlas 数据治理.html" />
+    
+    
+    <link rel="prev" href="zeppelin Note 执行过程.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    简介
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Zeppelin
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="zeppelin Note 运行方式.html">
+            
+                <a href="zeppelin Note 运行方式.html">
+            
+                    
+                    zeppelin Note 运行方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="zeppelin Note 执行过程.html">
+            
+                <a href="zeppelin Note 执行过程.html">
+            
+                    
+                    zeppelin Note 执行过程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="zeppelin 中运行 spark streaming kakfa 实时可视化.html">
+            
+                <a href="zeppelin 中运行 spark streaming kakfa 实时可视化.html">
+            
+                    
+                    zeppelin 中运行 spark streaming kakfa 实时可视化
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Atlas/Apache Atlas 数据治理.html">
+            
+                <a href="../Atlas/Apache Atlas 数据治理.html">
+            
+                    
+                    Apache-Atlas-数据治理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../FastDCS/FastDCS-introduction.html">
+            
+                <a href="../FastDCS/FastDCS-introduction.html">
+            
+                    
+                    FastDCS-分布式计算系统介绍
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../FastDCS/FastDCS 架构介绍.html">
+            
+                <a href="../FastDCS/FastDCS 架构介绍.html">
+            
+                    
+                    FastDCS-架构介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../FastDCS/FastDCS 开发实例.html">
+            
+                <a href="../FastDCS/FastDCS 开发实例.html">
+            
+                    
+                    FastDCS-开发实例
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../FastDCS/FastDCS 开发说明.html">
+            
+                <a href="../FastDCS/FastDCS 开发说明.html">
+            
+                    
+                    FastDCS 开发说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >zeppelin 中运行 spark streaming kakfa 实时可视化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="zeppelin-&#x4E2D;&#x8FD0;&#x884C;-spark-streaming-kakfa-&#x5B9E;&#x65F6;&#x53EF;&#x89C6;&#x5316;">zeppelin &#x4E2D;&#x8FD0;&#x884C; spark streaming kakfa &#x5B9E;&#x65F6;&#x53EF;&#x89C6;&#x5316;</h2>
+<p>notebook&#x65B9;&#x5F0F;&#x8FD0;&#x884C;spark&#x7A0B;&#x5E8F;&#x662F;&#x4E00;&#x79CD;&#x6BD4;&#x8F83;agile&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x4E00;&#x65B9;&#x9762;&#x53EF;&#x4EE5;&#x4F53;&#x9A8C;&#x50CF;spark-shell&#x90A3;&#x6837;repl&#x7684;&#x4FBF;&#x6377;&#xFF0C;&#x540C;&#x65F6;&#x53EF;&#x4EE5;&#x501F;&#x52A9;notebook&#x7684;&#x4F5C;&#x56FE;&#x80FD;&#x529B;&#x5B9E;&#x73B0;&#x5FEB;&#x901F;&#x6570;&#x636E;&#x53EF;&#x89C6;&#x5316;&#xFF0C;&#x975E;&#x5E38;&#x65B9;&#x4FBF;&#x5FEB;&#x901F;&#x9A8C;&#x8BC1;&#x548C;demo&#x3002;notebook&#x6709;&#x4E24;&#x79CD;&#x9009;&#x62E9;&#xFF0C;&#x4E00;&#x79CD;&#x662F;ipython notebook&#xFF0C;&#x4E3B;&#x8981;&#x9488;&#x5BF9;pyspark&#xFF1B;&#x53E6;&#x4E00;&#x79CD;&#x662F;zeppelin&#xFF0C;&#x53EF;&#x4EE5;&#x6267;&#x884C;scala spark&#xFF0C;pyspark&#x4EE5;&#x53CA;&#x5176;&#x5B83;&#x6267;&#x884C;&#x5F15;&#x64CE;&#xFF0C;&#x5305;&#x62EC;hive&#x7B49;&#x3002;&#x6BD4;&#x8F83;&#x800C;&#x8A00;&#xFF0C;ipython notebook&#x7684;&#x53EF;&#x89C6;&#x5316;&#x80FD;&#x529B;&#x66F4;&#x5F3A;&#xFF0C;zeppelin&#x7684;&#x529F;&#x80FD;&#x66F4;&#x5F3A;&#x3002;&#x8FD9;&#x91CC;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x57FA;&#x4E8E;zeppelin&#x7684;&#x65B9;&#x5F0F;&#x3002;</p>
+<h2 id="spark-standalone-&#x90E8;&#x7F72;">spark standalone &#x90E8;&#x7F72;</h2>
+<p>&#x672C;&#x5730;&#x642D;&#x5EFA;&#x7AEF;&#x5230;&#x7AEF;&#x73AF;&#x5883;&#x53EF;&#x4EE5;&#x91C7;&#x7528;spark standalone&#x90E8;&#x7F72;&#x65B9;&#x6848;&#x3002;
+&#x4ECE;spark&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#x4E0B;&#x8F7D;&#x538B;&#x7F29;&#x5305;spark-2.2.1-bin-hadoop2.7.tgz&#xFF0C;&#x89E3;&#x538B;&#x540E;&#x6267;&#x884C;</p>
+<pre><code>#start cluster
+./sbin/start-all.sh
+# check with spark shell
+spark-shell --master spark://localhost:7077
+# check the web UI
+http://localhost:8080
+</code></pre><h2 id="kafka-&#x6F14;&#x793A;&#x90E8;&#x7F72;">kafka &#x6F14;&#x793A;&#x90E8;&#x7F72;</h2>
+<p>kafka&#x5728;spark streaming&#x5E94;&#x7528;&#x573A;&#x666F;&#x4E2D;&#x4F7F;&#x7528;&#x975E;&#x5E38;&#x5E7F;&#x6CDB;&#xFF0C;&#x5B83;&#x6709;&#x5F88;&#x591A;&#x4F18;&#x79C0;&#x7684;&#x7279;&#x6027;&#xFF0C;&#x6A2A;&#x5411;&#x6269;&#x5C55;&#x3001;&#x6301;&#x4E45;&#x5316;&#x3001;&#x6709;&#x5E8F;&#x6027;&#x3001;API&#x652F;&#x6301;&#x4E09;&#x79CD;&#x4E00;&#x81F4;&#x6027;&#x8BED;&#x4E49;&#x7B49;&#x3002;
+&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#x4E0B;&#x8F7D;kafka_2.11-0.8.2.0.tar&#xFF0C;&#x5E76;&#x89E3;&#x538B;&#x3002;
+&#x8FD9;&#x91CC;&#x7B80;&#x5355;&#x542F;&#x52A8;&#x5355;&#x8282;&#x70B9;&#xFF1A;</p>
+<pre><code>#start zookeeper
+./bin/zookeeper-server-start.sh config/zookeeper.properties
+#start kafka borker
+./bin/kafka-server-start.sh config/server.properties
+</code></pre><h2 id="zeppelin&#x90E8;&#x7F72;&#x53CA;&#x793A;&#x4F8B;">zeppelin&#x90E8;&#x7F72;&#x53CA;&#x793A;&#x4F8B;</h2>
+<p>&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#x4E0B;&#x8F7D;zeppelin-0.7.3-bin-all.tgz&#xFF0C;&#x89E3;&#x538B;&#x3002;
+&#x4E3A;&#x4E86;&#x907F;&#x514D;&#x7AEF;&#x53E3;&#x51B2;&#x7A81;&#xFF0C;&#x5148;&#x6307;&#x5B9A;zeppelin&#x7684;web&#x7AEF;&#x53E3;&#xFF1A;<code>export ZEPPELIN_PORT=8088</code>.
+&#x542F;&#x52A8;:</p>
+<pre><code># start daemon
+./bin/zeppelin-daemon.sh start
+# check status
+./bin/zeppelin-daemon.sh status
+</code></pre><p>&#x8BBF;&#x95EE;localhost:8088&#xFF1A;
+<img src="assets/72806-20171216095124246-246529704.png" alt="zeppelin web"></p>
+<p>&#x521B;&#x5EFA;&#x4E00;&#x4E2A;notebook&#x5E76;&#x5C1D;&#x8BD5;&#x8FD0;&#x884C;&#x51E0;&#x4E2A;&#x5FEB;&#x901F;&#x793A;&#x4F8B;&#xFF1A;
+<img src="assets/72806-20171216102235527-1954085791.png" alt="Python, pyspark, spark&#x793A;&#x4F8B;"></p>
+<p>python&#x6216;&#x8005;pyspark&#x6570;&#x636E;&#x53EF;&#x89C6;&#x5316;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;matplotlib&#x4E5F;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5C06;&#x6570;&#x636E;&#x6253;&#x5370;&#x51FA;&#x6765;&#x52A0;&#x4E0A;table&#x5934;&#x7684;&#x6CE8;&#x89E3;<code>%table {column name1}\t{column name2}\t...</code></p>
+<h2 id="spark-streaming--direct-kafka">spark-streaming + direct kafka</h2>
+<p>kafka0.10.0&#x7684;API&#x8DDF;&#x4E4B;&#x524D;&#x7248;&#x672C;&#x53D8;&#x5316;&#x8F83;&#x5927;&#xFF0C;&#x53C2;&#x7167;<a href="http://spark.apache.org/docs/latest/streaming-kafka-0-10-integration.html&#xFF0C;&#x603B;&#x7ED3;&#x5982;&#x4E0B;&#xFF1A;" target="_blank">http://spark.apache.org/docs/latest/streaming-kafka-0-10-integration.html&#xFF0C;&#x603B;&#x7ED3;&#x5982;&#x4E0B;&#xFF1A;</a></p>
+<h3 id="locationstrategy">LocationStrategy</h3>
+<p>kafka partition&#x8DDF;spark executor&#x4E4B;&#x95F4;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;
+-<code>LocationStrategies.PreferConsistent</code> partition&#x88AB;&#x5747;&#x5300;&#x5730;&#x5BF9;&#x5E94;&#x5230;executor&#xFF1B;
+-<code>PreferBrokers</code> partition&#x88AB;&#x5206;&#x914D;&#x7ED9;&#x672C;&#x5730;&#x7684;executor&#xFF0C;&#x9002;&#x5408;kafka&#x8DDF;spark&#x96C6;&#x7FA4;&#x90E8;&#x7F72;&#x5728;&#x76F8;&#x540C;&#x8282;&#x70B9;&#x4E0A;&#x7684;&#x60C5;&#x51B5;&#xFF1B;
+-<code>PreferFixed</code> &#x6307;&#x5B9A;partition&#x8DDF;executor&#x7684;&#x6620;&#x5C04;&#x5173;&#x7CFB;</p>
+<h3 id="consumerstrategies">ConsumerStrategies</h3>
+<p>&#x53EF;&#x4EE5;subscribe&#x5230;&#x8FC7;&#x4E2A;topic</p>
+<h3 id="offset&#x4FDD;&#x5B58;">Offset&#x4FDD;&#x5B58;</h3>
+<p>0.10&#x4E4B;&#x524D;&#x7684;&#x7248;&#x672C;&#x4E2D;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x4FDD;&#x5B58;offset&#xFF0C;&#x4EE5;&#x9632;&#x6B62;spark&#x7A0B;&#x5E8F;&#x5F02;&#x5E38;&#x9000;&#x51FA;&#xFF0C;&#x5728;&#x91CD;&#x542F;&#x81EA;&#x540E;&#x80FD;&#x591F;&#x4ECE;failure point&#x5F00;&#x59CB;&#x91CD;&#x65B0;&#x5904;&#x7406;&#x6570;&#x636E;&#x3002;&#x65B0;&#x7248;&#x672C;&#x7684;kafka consumer API&#x81EA;&#x8EAB;&#x652F;&#x6301;&#x4E86;offset commit&#xFF0C;&#x5468;&#x671F;&#x5730;commit&#x3002;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x4E2D;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x81EA;&#x52A8;commit&#xFF0C;&#x56E0;&#x4E3A;&#x4ECE;kafka&#x4E2D;&#x6210;&#x529F;&#x83B7;&#x53D6;&#x6570;&#x636E;&#x540E;&#x5C31;commit offset&#x5B58;&#x5728;&#x4E00;&#x4E9B;&#x95EE;&#x9898;&#x3002;&#x6570;&#x636E;&#x6210;&#x529F;&#x88AB;&#x8BFB;&#x53D6;&#x5E76;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x6570;&#x636E;&#x88AB;spark&#x6210;&#x529F;&#x5904;&#x7406;&#x5B8C;&#x3002;&#x5728;&#x4E4B;&#x524D;&#x7684;&#x9879;&#x76EE;&#x4E2D;&#x6211;&#x4EEC;&#x7684;&#x65B9;&#x6848;&#x4E5F;&#x662F;&#x81EA;&#x5DF1;&#x4FDD;&#x5B58;offset&#xFF0C;&#x4F8B;&#x5982;&#x4FDD;&#x5B58;&#x5728;zookeeper&#x4E2D;&#x3002;</p>
+<p>&#x5B98;&#x7F51;&#x8868;&#x793A;spark&#x548C;kafka 0.10.0&#x7684;&#x96C6;&#x6210;&#x76EE;&#x524D;&#x4F9D;&#x7136;&#x662F;experimental&#x72B6;&#x6001;&#x3002;&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5C06;&#x57FA;&#x4E8E;0.8&#x7248;&#x672C;kafka&#x5F00;&#x53D1;&#x3002;<a href="http://spark.apache.org/docs/latest/streaming-kafka-0-8-integration.html" target="_blank">http://spark.apache.org/docs/latest/streaming-kafka-0-8-integration.html</a></p>
+<h2 id="spark-streaming--kafka--zeppelin">spark-streaming + kafka + zeppelin</h2>
+<p>&#x5728;zeppelin&#x4E2D;&#x6267;&#x884C;streaming&#x7A0B;&#x5E8F;&#x5E76;&#x5C06;&#x7ED3;&#x679C;&#x521B;&#x5EFA;&#x6210;temporary table&#xFF0C;&#x8FDB;&#x800C;&#x7528;&#x4E8E;&#x5B9E;&#x65F6;&#x6570;&#x636E;&#x53EF;&#x89C6;&#x5316;</p>
+<h3 id="&#x51C6;&#x5907;&#x4F9D;&#x8D56;">&#x51C6;&#x5907;&#x4F9D;&#x8D56;</h3>
+<p>zeppelin&#x6709;&#x7C7B;&#x4F3C;maven&#x7684;&#x4F9D;&#x8D56;&#x89E3;&#x51B3;&#x65B9;&#x6CD5;&#xFF0C;paragraph&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>%dep
+
+z.reset()
+z.load(&quot;org.apache.spark:spark-streaming-kafka-0-8_2.11:2.2.1&quot;)
+//z.load(&quot;org.apache.kafka:kafka_2.11:0.8.2.0&quot;)
+z.load(&quot;org.apache.kafka:kafka-clients:0.8.2.0&quot;)
+</code></pre><h3 id="&#x5355;&#x8BCD;&#x7EDF;&#x8BA1;&#x4EE3;&#x7801;">&#x5355;&#x8BCD;&#x7EDF;&#x8BA1;&#x4EE3;&#x7801;</h3>
+<p>&#x8BFB;&#x53D6;kafka&#x6570;&#x636E;&#xFF0C;&#x5206;&#x8BCD;&#xFF0C;&#x7EDF;&#x8BA1;&#x5355;&#x8BCD;&#x6570;&#x91CF;&#xFF0C;&#x5E76;&#x5C06;&#x7EDF;&#x8BA1;&#x7ED3;&#x679C;&#x521B;&#x5EFA;&#x6210;temporary table <code>counts</code>&#x3002;</p>
+<pre><code>%spark
+import _root_.kafka.serializer.DefaultDecoder
+import _root_.kafka.serializer.StringDecoder
+import org.apache.spark.streaming.kafka.KafkaUtils
+import org.apache.spark.storage.StorageLevel
+import org.apache.spark.streaming._
+
+// prevent INFO logging from pollution output
+sc.setLogLevel(&quot;INFO&quot;)
+
+// creating the StreamingContext with 5 seconds interval
+
+val ssc = new StreamingContext(sc, Seconds(5))
+
+val kafkaConf = Map(
+    &quot;metadata.broker.list&quot; -&gt; &quot;localhost:9092&quot;,
+    &quot;zookeeper.connect&quot; -&gt; &quot;localhost:2181&quot;,
+    &quot;group.id&quot; -&gt; &quot;kafka-streaming-example&quot;,
+    &quot;zookeeper.connection.timeout.ms&quot; -&gt; &quot;1000&quot;
+)
+
+val lines = KafkaUtils.createStream[Array[Byte], String, DefaultDecoder, StringDecoder](
+    ssc,
+    kafkaConf,
+    Map(&quot;test&quot; -&gt; 1),   // subscripe to topic and partition 1
+    StorageLevel.MEMORY_ONLY
+)
+
+val words = lines.flatMap{ case(x, y) =&gt; y.split(&quot; &quot;)}
+
+
+import spark.implicits._
+
+val w=words.map(x=&gt; (x,1L)).reduceByKey(_+_)
+w.foreachRDD(rdd =&gt; rdd.toDF.registerTempTable(&quot;counts&quot;))
+
+
+ssc.start()
+</code></pre><h3 id="&#x6570;&#x636E;&#x5C55;&#x793A;">&#x6570;&#x636E;&#x5C55;&#x793A;</h3>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;temporary table <code>counts</code> &#x4E2D;&#x67E5;&#x8BE2;&#x6BCF;&#x5C0F;&#x6279;&#x91CF;&#x7684;&#x6570;&#x636E;&#x4E2D;top 10 &#x7684;&#x5355;&#x8BCD;&#x503C;&#x3002;</p>
+<pre><code>%sql
+select * from counts order by _2 desc limit 10
+</code></pre><p><img src="assets/72806-20171216112430512-870498504.png" alt="img"></p>
+<h2 id="&#x7AEF;&#x5230;&#x7AEF;&#x6F14;&#x793A;">&#x7AEF;&#x5230;&#x7AEF;&#x6F14;&#x793A;</h2>
+<p>&#x4E3A;&#x4E86;&#x5FEB;&#x901F;&#x642D;&#x5EFA;&#x7AEF;&#x5230;&#x7AEF;&#x7684;&#x6570;&#x636E;&#x6D41;&#x5206;&#x6790;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5728;&#x4E0A;&#x8FF0;&#x5404;&#x4E2A;&#x6B65;&#x9AA4;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#x518D;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;restful service&#xFF0C;&#x6709;&#x5F88;&#x591A;&#x65B9;&#x5F0F;&#xFF0C;&#x4F8B;&#x5982;jetty + jersery&#xFF0C;&#x6216;&#x8005;&#x76F4;&#x63A5;&#x4F7F;&#x7528;nifi&#x8FDE;&#x63A5;&#x5230;kafka&#x3002;
+<img src="assets/72806-20171216123521106-49638199.png" alt="img"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="zeppelin Note 执行过程.html" class="navigation navigation-prev " aria-label="Previous page: zeppelin Note 执行过程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../Atlas/Apache Atlas 数据治理.html" class="navigation navigation-next " aria-label="Next page: Apache-Atlas-数据治理">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"zeppelin 中运行 spark streaming kakfa 实时可视化","level":"1.2.3","depth":2,"next":{"title":"Apache-Atlas-数据治理","level":"1.3","depth":1,"path":"Atlas/Apache Atlas 数据治理.md","ref":"Atlas/Apache Atlas 数据治理.md","articles":[]},"previous":{"title":"zeppelin Note 执行过程","level":"1.2.2","depth":2,"path":"zeppelin/zeppelin Note 执行过程.md","ref":"zeppelin/zeppelin Note 执行过程.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"zeppelin/zeppelin 中运行 spark streaming kakfa 实时可视化.md","mtime":"2018-05-09T09:18:02.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-05-11T09:42:06.510Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
